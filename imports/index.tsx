@@ -434,7 +434,7 @@ function UuidB09628E381244D6BB66C36Edea1E00Cb() {
   );
 }
 
-function Frame10() {
+export function Frame10() {
   return (
     <div className="h-[261px] relative shrink-0 w-[300px]">
       <Group8 />
@@ -664,32 +664,15 @@ function Frame12() {
   );
 }
 
-export default function Onboarding01Option1Default() {
-  // Spin the wheel (wedges + labels) on button click, then ease to a stop.
+export default function Onboarding01Option1Default({ onSpin }: { onSpin?: () => void }) {
+  // Clicking "Spin The Wheel" moves to Frame 2 (the spinning animation screen).
   useEffect(() => {
     const btn = document.getElementById("spin-btn");
-    const wedges = document.getElementById("spin-wedges");
-    const labels = document.getElementById("spin-labels");
-    if (!btn || !wedges || !labels) return;
-    let angle = 0;
-    let spinning = false;
-    const onClick = () => {
-      if (spinning) return;
-      spinning = true;
-      angle += 360 * 5 + Math.floor(Math.random() * 360); // several turns + random stop
-      const t = "transform 4s cubic-bezier(0.15, 0.6, 0.1, 1)";
-      wedges.style.transition = t;
-      labels.style.transition = t;
-      const r = `rotate(${angle}deg)`;
-      wedges.style.transform = r;
-      labels.style.transform = r;
-      window.setTimeout(() => {
-        spinning = false;
-      }, 4100);
-    };
+    if (!btn) return;
+    const onClick = () => onSpin?.();
     btn.addEventListener("click", onClick);
     return () => btn.removeEventListener("click", onClick);
-  }, []);
+  }, [onSpin]);
 
   return (
     <div className="bg-gradient-to-b from-[#fff2fe] relative size-full to-[#ffc3fb] to-[150.83%]" data-name="Onboarding 01_ option 1_Default">

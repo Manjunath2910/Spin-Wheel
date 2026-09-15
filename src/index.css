@@ -34,3 +34,104 @@ body,
   min-height: 100%;
   margin: 0;
 }
+
+/* Frame 2 — continuous wheel spin. Figma motion: rotate 0 -> 2110.443deg over
+   6.5653s linear (321.4deg/s), i.e. 360deg every ~1.121s, looping. The
+   pointer/hub stay fixed; only the wedges and labels rotate. */
+@keyframes spinfast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spinning #spin-wedges,
+.spinning #spin-labels {
+  animation: spinfast 1.121s linear infinite !important;
+}
+
+/* ── Exact Figma Frame 2 (SpinTheWheel export) animations ──────────────────
+   Reproduced from the Figma motion-context so the export runs without the
+   runtime motion library. */
+
+/* Wheel: Figma rotates 0 -> 2110.443deg over 6.5653s (321.4deg/s) then snaps to
+   2800 in the final 4ms; the perceived motion is a continuous 360deg / 1.1207s
+   linear spin, which we loop seamlessly. */
+@keyframes f2WheelSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.f2-wheel-spin {
+  animation: f2WheelSpin 1.1207s linear infinite;
+  will-change: transform;
+}
+
+/* One-shot spin for the spin -> stop -> reward flow. The wheel starts a bit fast
+   and continuously decelerates to a stop (~5.3 turns over 4s). The ease-out
+   timing function carries a moderate initial speed that tapers off to rest. */
+@keyframes f2WheelSpinStop {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1900deg); }
+}
+.f2-wheel-spinstop {
+  /* ease-out-cubic: moderately fast at the start, decelerating smoothly to rest. */
+  animation: f2WheelSpinStop 4s cubic-bezier(0.2, 0.68, 0.32, 1) forwards;
+  will-change: transform;
+}
+
+/* Suspense texts: 3-second timeline, one text shown per second, in order, played
+   once (Frame 3 appears when all three have completed). Each slides up + fades in
+   for its 1s window, then fades out. translateX(-50%) is baked into every keyframe
+   for horizontal centering. */
+@keyframes f2SuspenseA {
+  0%   { opacity: 0; transform: translate(-50%, 40px); }
+  5%   { opacity: 1; transform: translate(-50%, 0); }
+  28%  { opacity: 1; transform: translate(-50%, 0); }
+  33%  { opacity: 0; transform: translate(-50%, -30px); }
+  100% { opacity: 0; transform: translate(-50%, -30px); }
+}
+@keyframes f2SuspenseB {
+  0%   { opacity: 0; transform: translate(-50%, 40px); }
+  33%  { opacity: 0; transform: translate(-50%, 40px); }
+  38%  { opacity: 1; transform: translate(-50%, 0); }
+  61%  { opacity: 1; transform: translate(-50%, 0); }
+  66%  { opacity: 0; transform: translate(-50%, -30px); }
+  100% { opacity: 0; transform: translate(-50%, -30px); }
+}
+@keyframes f2SuspenseC {
+  0%   { opacity: 0; transform: translate(-50%, 40px); }
+  66%  { opacity: 0; transform: translate(-50%, 40px); }
+  71%  { opacity: 1; transform: translate(-50%, 0); }
+  96%  { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -30px); }
+}
+.f2-suspense-a { animation: f2SuspenseA 3s ease-in-out forwards; }
+.f2-suspense-b { animation: f2SuspenseB 3s ease-in-out forwards; }
+.f2-suspense-c { animation: f2SuspenseC 3s ease-in-out forwards; }
+
+/* Frame 4 ticker — scrolls the reward notifications leftward, looping. The row
+   is duplicated, so translating by -50% produces a seamless loop. */
+@keyframes f4Marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.f4-marquee {
+  animation: f4Marquee 18s linear infinite;
+  will-change: transform;
+}
+
+/* Frame 2 suspense text cross-fade: two texts, ~1s each, never overlapping.
+   The two keyframe sets are complementary so only one is ever at opacity > 0. */
+@keyframes f2A {
+  0% { opacity: 0; }
+  4% { opacity: 1; }
+  46% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes f2B {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  54% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.f2-textA { animation: f2A 2s ease-in-out infinite; }
+.f2-textB { animation: f2B 2s ease-in-out infinite; }

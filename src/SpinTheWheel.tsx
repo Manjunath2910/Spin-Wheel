@@ -562,16 +562,19 @@ function Overlay() {
           <svg className="absolute block inset-0 size-full" fill="none" height="1254" preserveAspectRatio="none" viewBox="0 0 1254 1254" width="1254" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g clipPath="url(#clip0_0_50)" id="Overlay">
               <g id="Repeat group 1">
-                <g id="Repeat group 1_inner" data-figma-trr="r8u1-0f">
+                {/* Sun-ray base. NB: the id must have NO spaces and be referenced
+                    without URL-encoding, otherwise mobile Safari/Chrome fail to
+                    resolve the <use> copies and only one ray renders. */}
+                <g id="f2sunray" data-figma-trr="r8u1-0f">
                   <path d={svgPaths.p3a611100} fill="#3A092D" fillOpacity="0.37" id="Vector 248" stroke="#9C3C8F" />
                 </g>
-                <use transform="translate(612.491 -233.199) rotate(45)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(1210.49 35.0006) rotate(90)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(1443.68 647.492) rotate(135)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(1175.48 1245.49) rotate(-180)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(562.993 1478.69) rotate(-135)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(-35.0006 1210.49) rotate(-90)" xlinkHref="#Repeat%20group%201_inner" />
-                <use transform="translate(-268.2 597.993) rotate(-45)" xlinkHref="#Repeat%20group%201_inner" />
+                <use transform="translate(612.491 -233.199) rotate(45)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(1210.49 35.0006) rotate(90)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(1443.68 647.492) rotate(135)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(1175.48 1245.49) rotate(-180)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(562.993 1478.69) rotate(-135)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(-35.0006 1210.49) rotate(-90)" href="#f2sunray" xlinkHref="#f2sunray" />
+                <use transform="translate(-268.2 597.993) rotate(-45)" href="#f2sunray" xlinkHref="#f2sunray" />
               </g>
               <g filter="url(#filter0_f_0_50)" id="Ellipse 1547">
                 <circle cx="592.829" cy="625.964" fill="#692359" r="56.4336" transform="rotate(-90 592.829 625.964)" />

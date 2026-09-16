@@ -21,23 +21,8 @@ export default function App() {
     return () => clearTimeout(t);
   }, [screen]);
 
-  // The frame is a fixed 390x844 canvas centred on the page. On phones the area
-  // around it must match the current screen so it doesn't show a clashing colour
-  // (Frame 2/3 are dark purple; Frame 1/4 are pink).
-  const pageBg =
-    screen === "spin" || screen === "reward" ? "#340226" : "#fff2fe";
-
-  // Keep the document background in sync so mobile overscroll / URL-bar areas
-  // also match the current screen instead of flashing white or pink.
-  useEffect(() => {
-    document.body.style.backgroundColor = pageBg;
-  }, [pageBg]);
-
   return (
-    <div
-      className="min-h-screen w-full flex items-start justify-center"
-      style={{ backgroundColor: pageBg }}
-    >
+    <div className="min-h-screen w-full flex items-start justify-center bg-[#fff2fe]">
       <div className="relative w-[390px] h-[844px] shrink-0 overflow-hidden">
         {screen === "main" && (
           <Onboarding01Option1Default onSpin={() => setScreen("spin")} />

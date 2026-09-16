@@ -7,9 +7,9 @@ import RewardCode from "./RewardCode";
 type Screen = "main" | "spin" | "reward" | "code";
 
 // How long Frame 2 shows before revealing Frame 3. The wheel starts a bit fast
-// and decelerates to a stop at 4s (.f2-wheel-spinstop) while the three suspense
-// texts play one per second; once the wheel has stopped, Frame 3 appears.
-const SPIN_DURATION_MS = 4300;
+// and decelerates to a stop, while the three suspense texts play 5 seconds each
+// (15s total); once all three have shown, Frame 3 appears.
+const SPIN_DURATION_MS = 15200;
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>("main");

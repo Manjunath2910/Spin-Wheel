@@ -63,16 +63,21 @@ body,
   will-change: transform;
 }
 
-/* One-shot spin for the spin -> stop -> reward flow. The wheel starts a bit fast
-   and continuously decelerates to a stop (~5.3 turns over 4s). The ease-out
-   timing function carries a moderate initial speed that tapers off to rest. */
+/* One-shot spin for the spin -> stop -> reward flow. The wheel spins for the full
+   15s the suspense texts play: a bit fast at the start, a long steady spin, then
+   a smooth deceleration to a full stop right as the texts end. Keyframe angles
+   encode the speed curve, so the timing function is linear. */
 @keyframes f2WheelSpinStop {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(1900deg); }
+  0%   { transform: rotate(0deg); }      /* 0.0s */
+  10%  { transform: rotate(700deg); }    /* ~1.5s — fast start (~467deg/s) */
+  72%  { transform: rotate(4000deg); }   /* ~10.8s — steady spin (~355deg/s) */
+  86%  { transform: rotate(4450deg); }   /* decelerating */
+  94%  { transform: rotate(4600deg); }
+  98%  { transform: rotate(4660deg); }
+  100% { transform: rotate(4680deg); }   /* 15.0s — at rest */
 }
 .f2-wheel-spinstop {
-  /* ease-out-cubic: moderately fast at the start, decelerating smoothly to rest. */
-  animation: f2WheelSpinStop 4s cubic-bezier(0.2, 0.68, 0.32, 1) forwards;
+  animation: f2WheelSpinStop 15s linear forwards;
   will-change: transform;
 }
 
@@ -102,9 +107,10 @@ body,
   96%  { opacity: 1; transform: translate(-50%, 0); }
   100% { opacity: 0; transform: translate(-50%, -30px); }
 }
-.f2-suspense-a { animation: f2SuspenseA 3s ease-in-out forwards; }
-.f2-suspense-b { animation: f2SuspenseB 3s ease-in-out forwards; }
-.f2-suspense-c { animation: f2SuspenseC 3s ease-in-out forwards; }
+/* 15s total = 5 seconds per text (each keyframe set spans one third of the timeline). */
+.f2-suspense-a { animation: f2SuspenseA 15s ease-in-out forwards; }
+.f2-suspense-b { animation: f2SuspenseB 15s ease-in-out forwards; }
+.f2-suspense-c { animation: f2SuspenseC 15s ease-in-out forwards; }
 
 /* Frame 4 ticker — scrolls the reward notifications leftward, looping. The row
    is duplicated, so translating by -50% produces a seamless loop. */

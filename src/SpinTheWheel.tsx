@@ -903,11 +903,6 @@ export default function SpinTheWheel({
 }) {
   return (
     <div className="bg-[#d2aece] relative size-full" data-name="Spin the wheel animation">
-      <div className="absolute h-[50px] left-0 top-0 w-[390px]" data-name="Status Bar - iPhone">
-        <div className="content-stretch flex flex-col items-start pt-[21px] relative size-full">
-          <StatusBarFrame />
-        </div>
-      </div>
       <Frame3 />
       <Frame8 />
       <Group8 />

@@ -37,11 +37,13 @@ export default function RewardForm({ onUnlock }: { onUnlock?: (data: { name: str
         </div>
 
         {/* Reward code box (node 7772:21151) — the code is obscured with the exact
-            Figma particle/dissolve effect (white rounded card + scattered code). */}
+            Figma particle/dissolve effect (white rounded card + scattered code).
+            relative z-[1] keeps it above the confetti (Figma: confetti sits behind
+            the box, not over it). */}
         <img
           src={imgBlurCode}
           alt="Reward code hidden until unlocked"
-          className="block w-full h-auto select-none"
+          className="relative z-[1] block w-full h-auto select-none"
         />
 
         {/* Name field (node 7772:21154) */}

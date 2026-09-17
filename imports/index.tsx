@@ -666,7 +666,7 @@ function Frame7() {
 
 function Frame12() {
   return (
-    <div className="-translate-x-1/2 absolute bottom-0 content-stretch flex flex-col h-[770px] items-center left-1/2 w-[390px]">
+    <div className="-translate-x-1/2 absolute bottom-0 content-stretch flex flex-col h-[794px] items-center justify-center left-1/2 w-[390px]">
       <Frame6 />
       <Frame7 />
     </div>

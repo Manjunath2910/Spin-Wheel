@@ -685,8 +685,8 @@ export default function Onboarding01Option1Default({ onSpin }: { onSpin?: () => 
 
   return (
     <div className="bg-gradient-to-b from-[#fff2fe] relative size-full to-[#ffc3fb] to-[150.83%]" data-name="Onboarding 01_ option 1_Default">
-      <div className="absolute h-[50px] left-0 top-0 w-[390px]" data-name="Status Bar - iPhone">
-        <div className="content-stretch flex flex-col items-start pt-[21px] relative size-full">
+      <div className="absolute h-[40px] left-0 top-0 w-[390px]" data-name="Status Bar - iPhone">
+        <div className="content-stretch flex flex-col items-start pt-[12px] relative size-full">
           <Frame />
         </div>
       </div>

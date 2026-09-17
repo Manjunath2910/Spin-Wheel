@@ -1,4 +1,4 @@
-import { StatusBarFrame, SponsorLogo } from "./SpinTheWheel";
+import { SponsorLogo } from "./SpinTheWheel";
 import imgTopSection from "@/imports/top-section.png";
 import imgGift from "@/imports/SpinTheWheelAnimation/28abd.png";
 import imgCoins from "@/imports/SpinTheWheelAnimation/5d417.png";
@@ -13,10 +13,6 @@ export default function RewardCode({ onBack, name }: { onBack?: () => void; name
       className="relative size-full overflow-hidden bg-gradient-to-b from-[#fff2fe] to-[#ffc3fb] to-[150.83%] cursor-pointer"
       onClick={onBack}
     >
-      {/* Status bar */}
-      <div className="absolute left-0 top-0 w-[390px] h-[50px] pt-[21px] flex flex-col items-start">
-        <StatusBarFrame />
-      </div>
 
       {/* Floating background coins (Figma nodes 7772:21465-21473). */}
       <div className="absolute inset-0 pointer-events-none">

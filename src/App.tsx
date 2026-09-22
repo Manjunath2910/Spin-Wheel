@@ -19,12 +19,15 @@ export default function App() {
   const [userName, setUserName] = useState("");
   const [scale, setScale] = useState(1);
 
-  // Responsive on every screen: scale the fixed 390x844 design to fit the viewport
-  // (fills the width on phones, fits the height on larger screens) and centre it,
-  // so the whole design is always fully visible without distortion.
+  // Responsive. Phones (<=640px wide): scale to the FULL width so the design fills
+  // the screen with no side margins; it's top-anchored, so on an unusually short
+  // phone the bottom simply scrolls instead of leaving white gaps on the sides.
+  // Larger screens: fit the whole frame inside the viewport and centre it.
   useEffect(() => {
     const update = () => {
-      setScale(Math.min(window.innerWidth / FRAME_W, window.innerHeight / FRAME_H));
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      setScale(w <= 640 ? w / FRAME_W : Math.min(w / FRAME_W, h / FRAME_H));
     };
     update();
     window.addEventListener("resize", update);
@@ -42,7 +45,7 @@ export default function App() {
   }, [screen]);
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#fff2fe]">
+    <div className="min-h-screen w-full flex items-start justify-center overflow-x-hidden bg-[#fff2fe]">
       {/* Wrapper takes the on-screen (scaled) size so the frame stays centred and
           the app fills the device width on phones. */}
       <div style={{ width: FRAME_W * scale, height: FRAME_H * scale }}>

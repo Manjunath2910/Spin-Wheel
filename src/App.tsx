@@ -19,13 +19,12 @@ export default function App() {
   const [userName, setUserName] = useState("");
   const [scale, setScale] = useState(1);
 
-  // On phones, scale the fixed 390x844 design to fill the device width so the top
-  // bar and everything spans edge-to-edge, matching the Figma. On wider screens
-  // it stays at the native 390px, centred.
+  // Responsive on every screen: scale the fixed 390x844 design to fit the viewport
+  // (fills the width on phones, fits the height on larger screens) and centre it,
+  // so the whole design is always fully visible without distortion.
   useEffect(() => {
     const update = () => {
-      const w = window.innerWidth;
-      setScale(w < 500 ? w / FRAME_W : 1);
+      setScale(Math.min(window.innerWidth / FRAME_W, window.innerHeight / FRAME_H));
     };
     update();
     window.addEventListener("resize", update);
@@ -43,7 +42,7 @@ export default function App() {
   }, [screen]);
 
   return (
-    <div className="min-h-screen w-full flex items-start justify-center overflow-hidden bg-[#fff2fe]">
+    <div className="min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#fff2fe]">
       {/* Wrapper takes the on-screen (scaled) size so the frame stays centred and
           the app fills the device width on phones. */}
       <div style={{ width: FRAME_W * scale, height: FRAME_H * scale }}>

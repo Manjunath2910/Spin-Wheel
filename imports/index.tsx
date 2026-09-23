@@ -549,9 +549,17 @@ function Texts1() {
 
 function Notification() {
   return (
-    <div className="bg-[#ffc3fb] content-stretch flex gap-[19px] items-center justify-center overflow-clip p-[8px] relative shrink-0 w-[390px]" data-name="Notification">
-      <Texts />
-      <Texts1 />
+    // Scrolling reward ticker — same marquee as Frame 5 (.f4-marquee in src/index.css).
+    <div className="bg-[#ffc3fb] overflow-clip py-[8px] relative shrink-0 w-[390px]" data-name="Notification">
+      <div className="f4-marquee flex w-max items-center whitespace-nowrap">
+        {[0, 1].map((dup) => (
+          <div key={dup} className="flex gap-[19px] items-center pr-[19px]">
+            <Texts />
+            <Texts1 />
+            <Texts1 />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

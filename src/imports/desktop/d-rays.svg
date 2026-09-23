@@ -1,0 +1,12 @@
+<svg width="2840" height="2424" viewBox="-700 -700 2840 2424" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="dsunray">
+<path d="M-297.169 897.111L724.816 461.925L-382.216 408.538L-297.169 897.111Z" fill="#3A092D" fill-opacity="0.37" stroke="#9C3C8F" stroke-width="1.19654"/>
+</g>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(541.277 -376.706) rotate(45)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(1190.39 -260.337) rotate(90)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(1567.1 280.94) rotate(135)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(1450.73 930.052) rotate(-180)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(909.449 1306.76) rotate(-135)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(260.337 1190.39) rotate(-90)"/>
+<use href="#dsunray" xlink:href="#dsunray" transform="translate(-116.369 649.112) rotate(-45)"/>
+</svg>

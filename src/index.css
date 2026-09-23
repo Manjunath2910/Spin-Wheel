@@ -69,15 +69,14 @@ body,
    encode the speed curve, so the timing function is linear. */
 @keyframes f2WheelSpinStop {
   0%   { transform: rotate(0deg); }      /* 0.0s */
-  10%  { transform: rotate(700deg); }    /* ~1.5s — fast start (~467deg/s) */
-  72%  { transform: rotate(4000deg); }   /* ~10.8s — steady spin (~355deg/s) */
-  86%  { transform: rotate(4450deg); }   /* decelerating */
-  94%  { transform: rotate(4600deg); }
-  98%  { transform: rotate(4660deg); }
-  100% { transform: rotate(4680deg); }   /* 15.0s — at rest */
+  10%  { transform: rotate(420deg); }    /* ~0.9s — fast start (~467deg/s) */
+  72%  { transform: rotate(2350deg); }   /* ~6.5s — steady spin (~346deg/s) */
+  86%  { transform: rotate(2650deg); }   /* decelerating */
+  94%  { transform: rotate(2760deg); }
+  100% { transform: rotate(2800deg); }   /* 9.0s — at rest */
 }
 .f2-wheel-spinstop {
-  animation: f2WheelSpinStop 15s linear forwards;
+  animation: f2WheelSpinStop 9s linear forwards;
   will-change: transform;
 }
 
@@ -107,10 +106,10 @@ body,
   96%  { opacity: 1; transform: translate(-50%, 0); }
   100% { opacity: 0; transform: translate(-50%, -30px); }
 }
-/* 15s total = 5 seconds per text (each keyframe set spans one third of the timeline). */
-.f2-suspense-a { animation: f2SuspenseA 15s ease-in-out forwards; }
-.f2-suspense-b { animation: f2SuspenseB 15s ease-in-out forwards; }
-.f2-suspense-c { animation: f2SuspenseC 15s ease-in-out forwards; }
+/* 9s total = 3 seconds per text (each keyframe set spans one third of the timeline). */
+.f2-suspense-a { animation: f2SuspenseA 9s ease-in-out forwards; }
+.f2-suspense-b { animation: f2SuspenseB 9s ease-in-out forwards; }
+.f2-suspense-c { animation: f2SuspenseC 9s ease-in-out forwards; }
 
 /* Frame 4 ticker — scrolls the reward notifications leftward, looping. The row
    is duplicated, so translating by -50% produces a seamless loop. */

@@ -597,6 +597,43 @@ function Overlay() {
   );
 }
 
+// ── Frame 3 overlay (Figma node 7701:20360) ──────────────────────────────────
+// Exact Figma values: 400x881 at (-5,-19), background blur 7.6 (CSS 3.8px),
+// linear gradient #F9A6F1 -> #28001E at 29% fill opacity, no extra tint layer.
+// The sun-ray watermark ("Repeat group 1", node 7701:20362) is Figma's own SVG
+// export in frame coordinates (390x844), so every ray lines up 1:1.
+function Frame3Overlay() {
+  return (
+    <div
+      className="absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-[-19px] w-[400px]"
+      style={{ backgroundImage: "linear-gradient(180deg, rgba(249, 166, 241, 0.29) 21.29%, rgba(40, 0, 30, 0.29) 82.86%)" }}
+      data-node-id="7701:20360"
+    >
+      <svg
+        className="absolute block left-[5px] top-[19px] overflow-visible"
+        width="390"
+        height="844"
+        viewBox="0 0 390 844"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
+        {/* NB: id without spaces so mobile browsers resolve every <use> copy. */}
+        <g id="f3sunray">
+          <path d="M-655.316 742.85L198.8 379.147L-726.394 334.529L-655.316 742.85Z" fill="#3A092D" fillOpacity="0.37" stroke="#9C3C8F" />
+        </g>
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(328.293 -29.0866) rotate(45)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(580.998 182.484) rotate(90)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(610.085 510.777) rotate(135)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(398.514 763.482) rotate(-180)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(70.2213 792.569) rotate(-135)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(-182.484 580.998) rotate(-90)" />
+        <use href="#f3sunray" xlinkHref="#f3sunray" transform="translate(-211.571 252.705) rotate(-45)" />
+      </svg>
+    </div>
+  );
+}
+
 // ── Animated Wheel ───────────────────────────────────────────────────────────
 // Wheel origin: left-[44.44px] top-[349.58px] size-[300.946×301px]
 // All child coords offset by (-44.44, -349.58) vs original Frame9 coords.
@@ -897,10 +934,23 @@ function Frame9({ phase = "loop", showWheel = true }: { phase?: "loop" | "spinst
 export default function SpinTheWheel({
   phase = "loop",
   showWheel = true,
+  variant = "spin",
 }: {
   phase?: "loop" | "spinstop";
   showWheel?: boolean;
+  /** "reward" = Frame 3 background (node 7701:20255): #741C59 base + its own overlay. */
+  variant?: "spin" | "reward";
 }) {
+  if (variant === "reward") {
+    return (
+      <div className="bg-[#741c59] relative size-full" data-name="Frame 3 background">
+        <Frame3 />
+        <Frame8 />
+        <Group8 />
+        <Frame3Overlay />
+      </div>
+    );
+  }
   return (
     <div className="bg-[#d2aece] relative size-full" data-name="Spin the wheel animation">
       <Frame3 />

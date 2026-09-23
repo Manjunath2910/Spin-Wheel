@@ -1,0 +1,49 @@
+<svg width="407.93" height="408" viewBox="0 0 407.93 408" fill="none" overflow="visible" xmlns="http://www.w3.org/2000/svg">
+<!-- Desktop wheel (Figma 7706:20204 + 7706:20227): ticks, wedges, hub, ring, pegs. Labels, pointer and Z logo are separate. -->
+<rect x="358.77" y="202.69" width="10.64" height="2.66" rx="0.89" fill="#EAEAEA"/>
+<rect x="50.09" y="205.34" width="10.64" height="2.66" rx="0.89" transform="rotate(180 50.09 205.34)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(-1 0 0 1 50.09 202.7)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(1 0 0 -1 358.77 205.32)" fill="#EAEAEA"/>
+<rect x="327.72" y="113.42" width="10.64" height="2.66" rx="0.89" transform="rotate(-34.9 327.72 113.42)" fill="#EAEAEA"/>
+<rect x="81.13" y="294.6" width="10.64" height="2.66" rx="0.89" transform="rotate(145.1 81.13 294.6)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(-0.82 -0.57 -0.57 0.82 81.13 113.45)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(0.82 0.57 0.57 -0.82 327.72 294.58)" fill="#EAEAEA"/>
+<rect x="251.88" y="58.98" width="10.64" height="2.66" rx="0.89" transform="rotate(-66.45 251.88 58.98)" fill="#EAEAEA"/>
+<rect x="156.97" y="349.05" width="10.64" height="2.66" rx="0.89" transform="rotate(113.55 156.97 349.05)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(-0.4 -0.92 -0.92 0.4 156.97 58.99)" fill="#EAEAEA"/>
+<rect width="10.64" height="2.66" rx="0.89" transform="matrix(0.4 0.92 0.92 -0.4 251.88 349.02)" fill="#EAEAEA"/>
+<path d="M349.75 203.87C349.75 234.76 339.95 264.86 321.75 289.82L203.85 203.87H349.75Z" fill="#FFC3FB"/>
+<path d="M86 289.32C67.88 264.3 58.17 234.17 58.27 203.28L204.18 203.75L86 289.32Z" fill="#FFC3FB"/>
+<path d="M248.68 342.63C219.28 352.09 187.62 351.97 158.28 342.3L203.99 203.73L248.68 342.63Z" fill="#FFC3FB"/>
+<path d="M86.28 117.78C104.55 92.86 130.26 74.39 159.7 65.02L203.94 204.06L86.28 117.78Z" fill="#FFC3FB"/>
+<path d="M249.2 65.19C278.58 74.74 304.17 93.38 322.29 118.4L204.09 203.95L249.2 65.19Z" fill="#FFC3FB"/>
+<path d="M321.76 289.82C303.56 314.78 277.91 333.33 248.5 342.78L203.85 203.87L321.76 289.82Z" fill="#A82486"/>
+<path d="M58.09 203.41C58.18 172.51 68.08 142.45 86.36 117.54L203.99 203.86L58.09 203.41Z" fill="#A82486"/>
+<path d="M158.3 342.3C128.96 332.63 103.44 313.89 85.44 288.78L203.99 203.73L158.3 342.3Z" fill="#A82486"/>
+<path d="M159.69 65.03C189.13 55.66 220.79 55.87 250.09 65.64L203.96 204.06L159.69 65.03Z" fill="#A82486"/>
+<path d="M322.27 118.4C340.39 143.43 350.1 173.55 350 204.45L204.09 203.96L322.27 118.4Z" fill="#A82486"/>
+<defs>
+<filter id="dwheel-hub" x="170" y="170" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="2.66" dy="3.1"/>
+<feGaussianBlur stdDeviation="0.4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="shadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="shadow" result="shape"/>
+</filter>
+</defs>
+<circle cx="203.97" cy="204" r="30.04" fill="#FDF9EE" filter="url(#dwheel-hub)"/>
+<circle cx="204.07" cy="203.65" r="150.01" stroke="#FFF2FE" stroke-width="10.56"/>
+<circle cx="326.60" cy="116.87" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="326.16" cy="116.43" r="2.88" fill="#1C181E"/>
+<circle cx="82.25" cy="116.87" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="81.81" cy="116.43" r="2.88" fill="#1C181E"/>
+<circle cx="250.26" cy="61.75" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="249.82" cy="61.31" r="2.88" fill="#1C181E"/>
+<circle cx="250.26" cy="346.90" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="249.82" cy="346.46" r="2.88" fill="#1C181E"/>
+<circle cx="354.99" cy="204.24" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="354.55" cy="203.80" r="2.88" fill="#1C181E"/>
+<circle cx="53.86" cy="204.24" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="53.42" cy="203.80" r="2.88" fill="#1C181E"/>
+<circle cx="158.40" cy="62.38" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="157.96" cy="61.94" r="2.88" fill="#1C181E"/>
+<circle cx="157.97" cy="347.09" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="157.53" cy="346.65" r="2.88" fill="#1C181E"/>
+<circle cx="325.27" cy="293.37" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="324.83" cy="292.93" r="2.88" fill="#1C181E"/>
+<circle cx="83.58" cy="293.36" r="2.88" fill="black" fill-opacity="0.25"/><circle cx="83.14" cy="292.92" r="2.88" fill="#1C181E"/>
+</svg>

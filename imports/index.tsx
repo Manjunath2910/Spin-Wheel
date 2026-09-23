@@ -665,7 +665,9 @@ function Frame2() {
 
 function Frame7() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-center py-[20px] relative shrink-0 w-full">
+    // mt-[12.66px]: matches Frame 5's spacing — 43.06px from the ticker to "Official Sponsor".
+    // (Frame12 sits 6.33px lower to compensate, so everything above the footer stays put.)
+    <div className="content-stretch flex flex-col gap-[12px] items-center mt-[12.66px] py-[20px] relative shrink-0 w-full">
       <Frame2 />
       <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[14px] text-center whitespace-nowrap">{`*Terms &Conditions Apply`}</p>
     </div>
@@ -674,7 +676,7 @@ function Frame7() {
 
 function Frame12() {
   return (
-    <div className="-translate-x-1/2 absolute bottom-0 content-stretch flex flex-col h-[794px] items-center justify-center left-1/2 w-[390px]">
+    <div className="-translate-x-1/2 absolute bottom-[-6.33px] content-stretch flex flex-col h-[794px] items-center justify-center left-1/2 w-[390px]">
       <Frame6 />
       <Frame7 />
     </div>

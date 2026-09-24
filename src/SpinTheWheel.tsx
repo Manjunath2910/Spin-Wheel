@@ -536,41 +536,40 @@ function Group8() {
 
 // ── Overlay background ───────────────────────────────────────────────────────
 
+// Sun-ray transforms from the Figma export of "Overlay" (7772:21280): the base ray
+// plus 7 rotated copies. Drawn as plain paths (no <use>/#id references and no SVG
+// filter) so every mobile browser, including iOS Safari, paints all of them.
+const F2_RAY = "M-663.316 827.854L190.8 464.15L-734.394 419.533L-663.316 827.854Z";
+const F2_RAY_TRANSFORMS = [
+  undefined,
+  "translate(386.054 1.4654) rotate(45)",
+  "translate(657.999 275.483) rotate(90)",
+  "translate(656.534 661.537) rotate(135)",
+  "translate(382.516 933.482) rotate(-180)",
+  "translate(-3.53786 932.017) rotate(-135)",
+  "translate(-275.483 657.999) rotate(-90)",
+  "translate(-274.018 271.945) rotate(-45)",
+];
+
 function Overlay() {
-  // Sun-ray watermark, exact Figma export of "Overlay" (7772:21280) in the 390×844
-  // frame's coordinates. The parent (Frame 2147241217) sits at (-5, -18.5), so the
-  // SVG is offset back by that amount; the parent's overflow-clip trims the rays.
+  // Coordinates are the 390×844 frame's; the parent sits at (-5, -18.5), hence the offset.
   return (
-    <svg
-      className="absolute block left-[5px] top-[18.5px] w-[390px] h-[844px] overflow-visible"
-      fill="none"
-      viewBox="0 0 390 844"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      data-node-id="7772:21280"
-    >
-      {/* NB: the id must have NO spaces and be referenced without URL-encoding,
-          otherwise mobile Safari/Chrome fail to resolve the <use> copies. */}
-      <g id="f2sunray">
-        <path d="M-663.316 827.854L190.8 464.15L-734.394 419.533L-663.316 827.854Z" fill="#3A092D" fillOpacity="0.37" stroke="#9C3C8F" />
-      </g>
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(386.054 1.4654) rotate(45)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(657.999 275.483) rotate(90)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(656.534 661.537) rotate(135)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(382.516 933.482) rotate(-180)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-3.53786 932.017) rotate(-135)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-275.483 657.999) rotate(-90)" />
-      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-274.018 271.945) rotate(-45)" />
-      <g filter="url(#f2glow)">
-        <circle cx="188.035" cy="471.828" r="56.4336" fill="#692359" />
-      </g>
-      <defs>
-        <filter id="f2glow" x="75.0016" y="358.795" width="226.067" height="226.067" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-          <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation="28.3" />
-        </filter>
-      </defs>
-    </svg>
+    <>
+      <svg
+        className="absolute block left-[5px] top-[18.5px] w-[390px] h-[844px] overflow-visible pointer-events-none"
+        width="390"
+        height="844"
+        fill="none"
+        viewBox="0 0 390 844"
+        data-node-id="7772:21280"
+      >
+        {F2_RAY_TRANSFORMS.map((t, k) => (
+          <path key={k} d={F2_RAY} transform={t} fill="#3A092D" fillOpacity="0.37" stroke="#9C3C8F" />
+        ))}
+      </svg>
+      {/* Ellipse 1547: #692359 circle r=56.43 at (188.04, 471.83), layer blur 56.6. */}
+      <div className="absolute left-[136.6px] top-[433.89px] size-[112.87px] rounded-full bg-[#692359] blur-[28.3px] pointer-events-none" />
+    </>
   );
 }
 
@@ -863,36 +862,41 @@ function Logo() {
 
 // NB: horizontal centering (translateX(-50%)) is applied inside the CSS keyframes
 // (animate-suspense-*) together with the animated vertical offset, so it is omitted here.
-const textBaseClass = "[word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]";
+const textBaseClass = "[word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[292.46px] w-[247.809px]";
 
 function Frame9({ phase = "loop", showWheel = true }: { phase?: "loop" | "spinstop"; showWheel?: boolean }) {
+  // Frame 2147241217 (7772:21279): 400×881 at (-5, -18.5); grows by --exty on tall phones.
+  // The blurred, tinted backdrop is its own empty layer and the rays/wheel sit in a
+  // sibling layer on top: iOS Safari drops a backdrop-filter element's own painting
+  // when it also contains animated (composited) children like the spinning wheel.
+  const box = "absolute left-[-5px] top-[-18.5px] w-[400px] h-[calc(881px+var(--exty,0px))]";
   return (
-    <div
-      // Frame 2147241217 (7772:21279): 400×881 at (-5, -18.5); grows by --exty on tall
-      // phones. Gradient stops are in px (21.29% / 82.86% of 881) so it never stretches.
-      className="absolute backdrop-blur-[3.8px] h-[calc(881px+var(--exty,0px))] left-[-5px] overflow-clip top-[-18.5px] w-[400px] bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_187.57px,rgba(40,0,30,0.29)_730px),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]"
-    >
-      <Overlay />
-      {showWheel && (
-        <>
-          {/* text 4 — node 1:199 (CSS keyframes animate-suspense-a, exact Figma timing) */}
-          <p className={`${textBaseClass} animate-suspense-a`}>
-            Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
-          </p>
-          {/* text 3 — node 1:198 */}
-          <p className={`${textBaseClass} animate-suspense-b`}>
-            Your karma is looking pretty good today. 😉
-          </p>
-          {/* text 1 — node 1:197 */}
-          <p className={`${textBaseClass} animate-suspense-c`}>
-            Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
-          </p>
-          <AnimatedWheel phase={phase} />
-          <Pin />
-          <Logo />
-        </>
-      )}
-    </div>
+    <>
+      {/* Gradient stops in px (21.29% / 82.86% of 881) so the wash never stretches. */}
+      <div className={`${box} backdrop-blur-[3.8px] bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_187.57px,rgba(40,0,30,0.29)_730px),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]`} />
+      <div className={`${box} overflow-clip`}>
+        <Overlay />
+        {showWheel && (
+          <>
+            {/* text 4 — node 1:199 (animate-suspense-a, 3s each) */}
+            <p className={`${textBaseClass} animate-suspense-a`}>
+              Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
+            </p>
+            {/* text 3 — node 1:198 */}
+            <p className={`${textBaseClass} animate-suspense-b`}>
+              Your karma is looking pretty good today. 😉
+            </p>
+            {/* text 1 — node 1:197 */}
+            <p className={`${textBaseClass} animate-suspense-c`}>
+              Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
+            </p>
+            <AnimatedWheel phase={phase} />
+            <Pin />
+            <Logo />
+          </>
+        )}
+      </div>
+    </>
   );
 }
 

@@ -611,195 +611,128 @@ function Frame3Overlay({ tint = false }: { tint?: boolean }) {
 // Wheel origin: left-[44.44px] top-[349.58px] size-[300.946×301px]
 // All child coords offset by (-44.44, -349.58) vs original Frame9 coords.
 
-function Group11() {
-  return (
-    <div className="absolute left-0 top-0 h-[301px] w-[300.946px]">
-      <svg className="absolute block inset-0 size-full" fill="none" height="301" preserveAspectRatio="none" viewBox="0 0 300.947 301" width="300.947">
-        <g id="Group 2147227489b">
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" width="7.85217" x="264.681" y="149.531" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="rotate(180 36.954 151.488)" width="7.85217" x="36.954" y="151.488" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(-1 0 0 1 36.954 149.543)" width="7.85217" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(1 0 0 -1 264.681 151.472)" width="7.85217" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="rotate(-34.9019 241.77 83.6796)" width="7.85217" x="241.77" y="83.6796" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="rotate(145.098 59.8563 217.339)" width="7.85217" x="59.8563" y="217.339" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(-0.820133 -0.572173 -0.572173 0.820133 59.8563 83.6991)" width="7.85217" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(0.820133 0.572173 0.572173 -0.820133 241.77 217.324)" width="7.85217" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="rotate(-66.4515 185.825 43.5077)" width="7.85217" x="185.825" y="43.5077" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="rotate(113.548 115.806 257.507)" width="7.85217" x="115.806" y="257.507" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(-0.399525 -0.916722 -0.916722 0.399525 115.806 43.5233)" width="7.85217" />
-          <rect fill="#EAEAEA" height="1.96304" rx="0.654348" transform="matrix(0.399525 0.916722 0.916722 -0.399525 185.825 257.492)" width="7.85217" />
-          <path d={svgPaths.p10aaad70} fill="#FFC3FB" />
-          <path d={svgPaths.p26015800} fill="#FFC3FB" />
-          <path d={svgPaths.p4856300} fill="#FFC3FB" />
-          <path d={svgPaths.p2a46da80} fill="#FFC3FB" />
-          <path d={svgPaths.p23f53900} fill="#FFC3FB" />
-          <path d={svgPaths.p1a785a00} fill="#A82486" />
-          <path d={svgPaths.pb12dfa0} fill="#A82486" />
-          <path d={svgPaths.p3696ee00} fill="#A82486" />
-          <path d={svgPaths.p16043180} fill="#A82486" />
-          <path d={svgPaths.p2dcf9100} fill="#A82486" />
-        </g>
-      </svg>
-    </div>
-  );
-}
+// Exact Figma "Wheel" group (7772:21287), exported from Figma as SVG and inlined.
+// Only the wheel rotates; the Pin and the Z logo on top stay fixed, as in Figma.
+const F2_DOT_FILTER = (
+  <filter id="f2w-dot" x="-50%" y="-50%" width="200%" height="200%" colorInterpolationFilters="sRGB">
+    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+    <feOffset dx="0.32" dy="0.32" />
+    <feComposite in2="hardAlpha" operator="out" />
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+  </filter>
+);
 
-function WheelDotA() {
-  return (
-    <div className="absolute inset-[0_-7.69%_-7.69%_0]">
-      <DotA />
-    </div>
-  );
-}
+// Perimeter dots (#1C181E, r 2.12): plain centres, or [cx, cy, matrix] for mirrored ones.
+const F2_DOTS: (string | undefined)[][] = [
+  ["240.62", "85.90"],
+  ["2.12", "2.12", "matrix(-1 0 0 1 62.48 83.77)"],
+  ["2.12", "2.12", "matrix(-0.31 -0.94 -0.94 0.31 186.99 46.58)"],
+  ["2.12", "2.12", "matrix(-0.31 -0.94 -0.94 0.31 186.99 256.94)"],
+  ["261.57", "150.35"],
+  ["2.12", "2.12", "matrix(-1 0 0 1 41.54 148.22)"],
+  ["2.12", "2.12", "matrix(-0.31 -0.94 -0.94 0.31 119.22 47.04)"],
+  ["2.12", "2.12", "matrix(-0.31 -0.94 -0.94 0.31 118.90 257.08)"],
+  ["239.64", "216.10"],
+  ["2.12", "2.12", "matrix(-1 0 0 1 63.46 213.97)"],
+];
 
-function WheelDotBInner() {
-  return (
-    <div className="-scale-y-100 flex-none rotate-180">
-      <div className="relative size-[4.253px]">
-        <div className="absolute inset-[0_-7.69%_-7.69%_0]">
-          <DotB />
-        </div>
-      </div>
-    </div>
-  );
-}
+// Prize labels: [text, transform, tspan x, fill] — Plus Jakarta Sans Medium 12px.
+const F2_LABELS: [string, string, string, string][] = [
+  ["€25", "translate(156.85 205.35) rotate(89.10)", "0.05", "#28001E"],
+  ["€50", "translate(100.09 174.37) rotate(161.92)", "0.30", "#28001E"],
+  ["€15", "translate(210.21 160.51) rotate(18.20)", "0.35", "#28001E"],
+  ["€10", "translate(201.84 126.62) rotate(-22.93)", "0.21", "#FFF2FE"],
+  ["€5", "translate(174.84 99.97) rotate(-55.27)", "0.15", "#28001E"],
+  ["€20", "translate(190.79 193.49) rotate(52.12)", "0.41", "white"],
+  ["€35", "translate(122.78 201.18) rotate(129.26)", "0.48", "white"],
+  ["€65", "translate(94.02 140.45) rotate(-162.97)", "0.05", "white"],
+  ["€75", "translate(111.99 106.66) rotate(-125.09)", "0.48", "#28001E"],
+  ["€100", "translate(144.01 96.89) rotate(-89.94)", "0.37", "white"],
+];
 
-function WheelDotCInner(props: { rot: string }) {
+function WheelSvg() {
   return (
-    <div className={`-scale-y-100 flex-none ${props.rot}`}>
-      <div className="relative size-[4.253px]">
-        <div className="absolute inset-[0_-7.69%_-7.69%_0]">
-          <DotC />
-        </div>
-      </div>
-    </div>
+    <svg className="absolute block left-0 top-0 w-[301px] h-[301px] overflow-visible" width="301" height="301" viewBox="0 0 301 301" fill="none">
+      <g filter="url(#f2w-glow)">
+        {/* Grey ticks around the rim */}
+        <rect x="264.68" y="149.53" width="7.85" height="1.96" rx="0.65" fill="#EAEAEA" />
+        <rect x="36.95" y="151.48" width="7.85" height="1.96" rx="0.65" transform="rotate(-180 36.95 151.48)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(-1 0 0 1 36.95 149.54)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(1 0 0 -1 264.68 151.47)" fill="#EAEAEA" />
+        <rect x="241.77" y="83.67" width="7.85" height="1.96" rx="0.65" transform="rotate(-34.90 241.77 83.67)" fill="#EAEAEA" />
+        <rect x="59.85" y="217.34" width="7.85" height="1.96" rx="0.65" transform="rotate(145.09 59.85 217.34)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(-0.82 -0.57 -0.57 0.82 59.85 83.69)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(0.82 0.57 0.57 -0.82 241.77 217.32)" fill="#EAEAEA" />
+        <rect x="185.82" y="43.50" width="7.85" height="1.96" rx="0.65" transform="rotate(-66.45 185.82 43.50)" fill="#EAEAEA" />
+        <rect x="115.80" y="257.50" width="7.85" height="1.96" rx="0.65" transform="rotate(113.54 115.80 257.50)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(-0.39 -0.91 -0.91 0.39 115.80 43.52)" fill="#EAEAEA" />
+        <rect width="7.85" height="1.96" rx="0.65" transform="matrix(0.39 0.91 0.91 -0.39 185.82 257.49)" fill="#EAEAEA" />
+        {/* Wedges */}
+        <path d="M258.03 150.39C258.03 173.19 250.79 195.39 237.37 213.81L150.39 150.39H258.03Z" fill="#FFC3FB" />
+        <path d="M63.45 213.44C50.08 194.98 42.92 172.75 42.99 149.96L150.63 150.31L63.45 213.44Z" fill="#FFC3FB" />
+        <path d="M183.46 252.77C161.77 259.75 138.41 259.66 116.77 252.52L150.49 150.30L183.46 252.77Z" fill="#FFC3FB" />
+        <path d="M63.65 86.88C77.13 68.51 96.09 54.88 117.81 47.97L150.46 150.54L63.65 86.88Z" fill="#FFC3FB" />
+        <path d="M183.84 48.09C205.52 55.14 224.40 68.88 237.76 87.35L150.57 150.46L183.84 48.09Z" fill="#FFC3FB" />
+        <path d="M237.37 213.80C223.95 232.22 205.02 245.90 183.33 252.88L150.39 150.40L237.37 213.80Z" fill="#A82486" />
+        <path d="M42.85 150.06C42.92 127.26 50.23 105.08 63.71 86.71L150.49 150.39L42.85 150.06Z" fill="#A82486" />
+        <path d="M116.78 252.53C95.13 245.39 76.31 231.57 63.03 213.05L150.49 150.30L116.78 252.53Z" fill="#A82486" />
+        <path d="M117.81 47.97C139.53 41.06 162.88 41.21 184.50 48.42L150.46 150.54L117.81 47.97Z" fill="#A82486" />
+        <path d="M237.76 87.34C251.12 105.80 258.28 128.03 258.21 150.82L150.57 150.47L237.76 87.34Z" fill="#A82486" />
+        {/* White rim */}
+        <circle cx="150.55" cy="150.24" r="110.67" stroke="#FFF2FE" strokeWidth="7.78" />
+        {F2_DOTS.map(([cx, cy, t], k) => (
+          <circle key={k} cx={cx} cy={cy} r="2.12" transform={t} fill="#1C181E" filter="url(#f2w-dot)" />
+        ))}
+        {F2_LABELS.map(([label, t, x, fill]) => (
+          <text key={label} transform={t} fill={fill} xmlSpace="preserve" className="whitespace-pre font-jakarta" fontSize="12" fontWeight="500" letterSpacing="0em">
+            <tspan x={x} y="11.89">{label}</tspan>
+          </text>
+        ))}
+        {/* Hub */}
+        <circle cx="150.48" cy="150.49" r="22.16" fill="#FDF9EE" filter="url(#f2w-hub)" />
+      </g>
+      <defs>
+        {/* Wheel drop shadow: #D687C1, offset 1, blur 17.66. */}
+        <filter id="f2w-glow" x="12.44" y="19.01" width="278.75" height="264.45" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+          <feOffset dx="1.00" dy="1.00" />
+          <feGaussianBlur stdDeviation="8.83" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0.83 0 0 0 0 0.53 0 0 0 0 0.75 0 0 0 1 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+        {F2_DOT_FILTER}
+        <filter id="f2w-hub" x="128.32" y="128.33" width="46.87" height="47.20" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+          <feOffset dx="1.96" dy="2.29" />
+          <feGaussianBlur stdDeviation="0.29" />
+          <feComposite in2="hardAlpha" operator="out" />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+      </defs>
+    </svg>
   );
 }
 
 function AnimatedWheel({ phase = "loop" }: { phase?: "loop" | "spinstop" }) {
+  // Wheel 7772:21287 at frame (39.44, 331.08) = (44.44, 349.58) in the Frame9 box.
   return (
     <div
-      className={`${phase === "spinstop" ? "animate-wheel-spinstop" : "animate-wheel-spin"} will-change-transform absolute overflow-visible left-[44.44px] top-[349.58px] w-[300.946px] h-[301px] origin-center`}
+      className={`${phase === "spinstop" ? "animate-wheel-spinstop-rest" : "animate-wheel-spin"} will-change-transform absolute overflow-visible left-[44.44px] top-[349.58px] w-[300.946px] h-[301px] origin-[150.48px_150.49px]`}
       data-name="Wheel"
     >
-      <Group11 />
-      {/* Outer stroke ring with the Figma wheel's soft drop-shadow. */}
-      <div
-        className="absolute left-[35.99px] top-[35.68px] w-[229.135px] h-[229.135px] drop-shadow-[0px_2px_5px_rgba(28,0,22,0.33)]"
-      >
-        <svg className="absolute block inset-0 size-full" fill="none" height="229.135" preserveAspectRatio="none" viewBox="0 0 229.135 229.135" width="229.135">
-          <circle cx="114.567" cy="114.567" r="110.673" stroke="#FFF2FE" strokeWidth="7.78857" />
-        </svg>
-      </div>
-      {/* Perimeter dots */}
-      <div className="absolute left-[238.5px] top-[83.77px] w-[4.253px] h-[4.253px]">
-        <WheelDotA />
-      </div>
-      <div className="absolute flex items-center justify-center left-[58.23px] top-[83.77px] w-[4.253px] h-[4.253px]">
-        <WheelDotBInner />
-      </div>
-      <div className="absolute flex items-center justify-center left-[181.62px] top-[42.55px] w-[5.378px] h-[5.378px]">
-        <WheelDotCInner rot="rotate-[-108.39deg]" />
-      </div>
-      <div className="absolute flex items-center justify-center left-[181.62px] top-[252.91px] w-[5.378px] h-[5.378px]">
-        <WheelDotCInner rot="rotate-[-108.39deg]" />
-      </div>
-      <div className="absolute left-[259.44px] top-[148.23px] w-[4.253px] h-[4.253px]">
-        <WheelDotA />
-      </div>
-      <div className="absolute flex items-center justify-center left-[37.29px] top-[148.23px] w-[4.253px] h-[4.253px]">
-        <WheelDotBInner />
-      </div>
-      <div className="absolute flex items-center justify-center left-[113.85px] top-[43.01px] w-[5.378px] h-[5.378px]">
-        <WheelDotCInner rot="rotate-[-108.39deg]" />
-      </div>
-      <div className="absolute flex items-center justify-center left-[113.53px] top-[253.05px] w-[5.378px] h-[5.378px]">
-        <WheelDotCInner rot="rotate-[-108.39deg]" />
-      </div>
-      <div className="absolute left-[237.52px] top-[213.98px] w-[4.253px] h-[4.253px]">
-        <WheelDotA />
-      </div>
-      <div className="absolute flex items-center justify-center left-[59.21px] top-[213.98px] w-[4.253px] h-[4.253px]">
-        <WheelDotBInner />
-      </div>
-      {/* Price labels */}
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[150.04px] top-[205.36px] w-[14.373px] h-[24.216px]">
-        <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[85.56px] top-[161.06px] w-[29.061px] h-[21.377px]">
-        <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€50</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[218.47px] top-[160.52px] w-[25.273px] h-[20.174px]">
-        <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[215.16px] top-[117.67px] w-[26.637px] h-[21.855px]">
-        <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[185.44px] top-[86px] w-[21.19px] h-[21.947px]">
-        <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[193.25px] top-[193.49px] w-[27.014px] h-[29.118px]">
-        <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[109.46px] top-[192.33px] w-[26.661px] h-[28.217px]">
-        <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€35</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[84.6px] top-[120.04px] w-[27.048px] h-[20.414px]">
-        <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€65</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[110.82px] top-[78.99px] w-[25.254px] h-[27.686px]">
-        <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
-        </div>
-      </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[151.01px] top-[64.89px] w-[14px] h-[32px]">
-        <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€100</p>
-        </div>
-      </div>
-      {/* Center hub */}
-      <div className="absolute left-[128.32px] top-[128.34px] w-[44.323px] h-[44.323px]">
-        <div className="absolute inset-[0_-5.76%_-6.5%_0]">
-          <svg className="block size-full" fill="none" height="47.202" preserveAspectRatio="none" viewBox="0 0 46.8748 47.202" width="46.8748">
-            <g filter="url(#filter0_d_0_26)">
-              <circle cx="22.1614" cy="22.1614" fill="#FDF9EE" r="22.1614" />
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="47.202" id="filter0_d_0_26" width="46.8748" x="0" y="0">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dx="1.96304" dy="2.29022" />
-                <feGaussianBlur stdDeviation="0.294456" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                <feBlend in2="BackgroundImageFix" mode="normal" result="effect1_dropShadow_0_26" />
-                <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_26" mode="normal" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-        </div>
-      </div>
+      <WheelSvg />
     </div>
   );
 }
-
-// ── Pin ──────────────────────────────────────────────────────────────────────
 
 function Pin() {
   return (
@@ -836,24 +769,15 @@ function Pin() {
 
 // ── Logo (center overlay) ────────────────────────────────────────────────────
 
-function Group4() {
-  return (
-    <div className="absolute inset-[55.8%_48.86%_42.12%_46.4%]" data-name="Group">
-      <svg className="absolute block inset-0 size-full" fill="none" height="18.3849" preserveAspectRatio="none" viewBox="0 0 18.9874 18.3849" width="18.9874">
-        <g id="Group-logo">
-          <path d={svgPaths.pdbb80} fill="#750558" />
-          <path d={svgPaths.p2c95a100} fill="#750558" />
-          <path d={svgPaths.p1a1f52f0} fill="#750558" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
 function Logo() {
+  // Z logo (7772:21338): frame (180.59, 473.05), 18.99×18.39 → +5 / +18.5 in the Frame9 box.
   return (
-    <div className="absolute contents inset-[55.79%_48.86%_42.12%_46.4%]" data-name="logo">
-      <Group4 />
+    <div className="absolute left-[185.59px] top-[491.55px] w-[18.987px] h-[18.385px]" data-name="logo">
+      <svg className="absolute block inset-0 size-full" fill="none" height="18.3849" preserveAspectRatio="none" viewBox="0 0 18.9874 18.3849" width="18.9874">
+        <path d={svgPaths.pdbb80} fill="#750558" />
+        <path d={svgPaths.p2c95a100} fill="#750558" />
+        <path d={svgPaths.p1a1f52f0} fill="#750558" />
+      </svg>
     </div>
   );
 }

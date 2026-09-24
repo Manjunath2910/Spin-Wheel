@@ -20,6 +20,9 @@
   --animate-wheel-spin: wheel-spin 1.1207s linear infinite;
   /* One-shot 9s spin → steady → decelerate → stop (Frame 2 flow). */
   --animate-wheel-spinstop: wheel-spinstop 9s linear forwards;
+  /* Mobile Frame 2: same speed curve, but ends on a whole turn (2880deg) so the
+     wheel comes to rest exactly as drawn in Figma (€100 at the top). */
+  --animate-wheel-spinstop-rest: wheel-spinstop-rest 9s linear forwards;
   /* Suspense texts: 3s each inside the 9s spin; -50% X centring is baked in. */
   --animate-suspense-a: suspense-a 9s ease-in-out forwards;
   --animate-suspense-b: suspense-b 9s ease-in-out forwards;
@@ -38,6 +41,14 @@
     86%  { transform: rotate(2650deg); }
     94%  { transform: rotate(2760deg); }
     100% { transform: rotate(2800deg); }
+  }
+  @keyframes wheel-spinstop-rest {
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(432deg); }
+    72%  { transform: rotate(2417deg); }
+    86%  { transform: rotate(2726deg); }
+    94%  { transform: rotate(2839deg); }
+    100% { transform: rotate(2880deg); }
   }
   @keyframes suspense-a {
     0%   { opacity: 0; transform: translate(-50%, 40px); }

@@ -8,7 +8,7 @@ function Time() {
     <div className="flex-[1_0_0] min-w-px relative" data-name="Time">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pl-[16px] pr-[6px] relative size-full">
-          <p className="[word-break:break-word] font-['SF_Pro:Semibold',sans-serif] font-[590] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <p className="[word-break:break-word] font-sfpro font-[590] [font-variation-settings:'wdth'_100] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap">
             9:41
           </p>
         </div>
@@ -150,7 +150,7 @@ function Group6() {
 function Frame3() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[4px] items-center left-[calc(50%+0.01px)] top-[770px]">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#e25dc0] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#e25dc0] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
       <Group6 />
     </div>
   );
@@ -158,7 +158,7 @@ function Frame3() {
 
 function Frame5() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] items-start mb-[-18px] not-italic relative shrink-0 text-[#a82486] uppercase w-[137.336px]">
+    <div className="[word-break:break-word] content-stretch flex flex-col font-display font-normal! tracking-[0.5px]! items-start mb-[-18px] not-italic relative shrink-0 text-[#a82486] uppercase w-[137.336px]">
       <p className="leading-[63px] mb-[-30px] relative shrink-0 text-[33.224px] tracking-[0.6645px] w-full">Spin to</p>
       <p className="h-[62.842px] leading-[80.324px] relative shrink-0 text-[65.236px] tracking-[1.3047px] w-full">win</p>
     </div>
@@ -170,7 +170,7 @@ function Frame4() {
     <div className="flex h-[45.445px] items-center justify-center relative shrink-0 w-full">
       <div className="-rotate-6 flex-none w-full">
         <div className="bg-[#ffd5b3] content-stretch flex items-center justify-center overflow-clip px-[12px] py-[4px] relative rounded-[16px] w-full">
-          <p className="[word-break:break-word] font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] leading-[21.577px] not-italic relative shrink-0 text-[#e56805] text-[22px] text-center tracking-[0.44px] uppercase whitespace-nowrap">upto €100</p>
+          <p className="[word-break:break-word] font-display font-normal! tracking-[0.5px]! leading-[21.577px] not-italic relative shrink-0 text-[#e56805] text-[22px] text-center tracking-[0.44px] uppercase whitespace-nowrap">upto €100</p>
         </div>
       </div>
     </div>
@@ -190,7 +190,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0">
       <Frame6 />
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[16px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[16px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
     </div>
   );
 }
@@ -427,52 +427,52 @@ function Group7() {
       <UuidB09628E381244D6BB66C36Edea1E00Cb />
       <div className="col-1 flex h-[24.216px] items-center justify-center ml-[142.86px] mt-[205.36px] relative row-1 w-[14.373px]">
         <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
         </div>
       </div>
       <div className="col-1 flex h-[20.756px] items-center justify-center ml-[71.98px] mt-[161.37px] relative row-1 w-[27.16px]">
         <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
         </div>
       </div>
       <div className="col-1 flex h-[20.174px] items-center justify-center ml-[205.84px] mt-[160.52px] relative row-1 w-[25.273px]">
         <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
         </div>
       </div>
       <div className="col-1 flex h-[21.855px] items-center justify-center ml-[201.84px] mt-[117.66px] relative row-1 w-[26.637px]">
         <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
         </div>
       </div>
       <div className="col-1 flex h-[21.947px] items-center justify-center ml-[174.85px] mt-[86px] relative row-1 w-[21.19px]">
         <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
         </div>
       </div>
       <div className="col-1 flex h-[29.118px] items-center justify-center ml-[179.75px] mt-[193.49px] relative row-1 w-[27.014px]">
         <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
         </div>
       </div>
       <div className="col-1 flex h-[28.991px] items-center justify-center ml-[96.13px] mt-[191.56px] relative row-1 w-[27.294px]">
         <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
         </div>
       </div>
       <div className="col-1 flex h-[32.42px] items-center justify-center ml-[51px] mt-[113.89px] relative row-1 w-[66.25px]">
         <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
         </div>
       </div>
       <div className="col-1 flex h-[34.231px] items-center justify-center ml-[95.9px] mt-[75.71px] relative row-1 w-[29.853px]">
         <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
         </div>
       </div>
       <div className="col-1 flex h-[66px] items-center justify-center ml-[144px] mt-[47.89px] relative row-1 w-[14px]">
         <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
         </div>
       </div>
     </div>
@@ -504,7 +504,7 @@ function Frame7() {
 function ButtonMain() {
   return (
     <div className="bg-[#750558] border-0 border-[#c044a0] border-solid content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[869.5px] shrink-0 w-[120px]" data-name="Button Main">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[14px] text-center whitespace-nowrap">{`Spin `}</p>
+      <p className="[word-break:break-word] font-jakarta font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[14px] text-center whitespace-nowrap">{`Spin `}</p>
     </div>
   );
 }
@@ -894,52 +894,52 @@ function Wheel() {
       </div>
       <div className="-translate-x-1/2 absolute flex h-[24.216px] items-center justify-center left-[194.48px] top-[554.94px] w-[14.373px]">
         <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[370.36px] flex h-[21.377px] items-center justify-center left-[130px] translate-y-full w-[29.061px]">
         <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€50</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€50</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[370.9px] flex h-[20.174px] items-center justify-center left-[262.91px] translate-y-full w-[25.273px]">
         <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[21.855px] items-center justify-center left-[259.6px] top-[467.25px] w-[26.637px]">
         <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[445.42px] flex h-[21.947px] items-center justify-center left-[229.88px] translate-y-full w-[21.19px]">
         <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[29.118px] items-center justify-center left-[237.69px] top-[543.07px] w-[27.014px]">
         <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[28.217px] items-center justify-center left-[153.9px] top-[541.91px] w-[26.661px]">
         <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€35</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€35</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[20.414px] items-center justify-center left-[129.04px] top-[469.62px] w-[27.048px]">
         <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€65</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€65</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[27.686px] items-center justify-center left-[155.26px] top-[428.57px] w-[25.254px]">
         <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[32px] items-center justify-center left-[195.45px] top-[414.47px] w-[14px]">
         <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€100</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€100</p>
         </div>
       </div>
       <div className="absolute left-[172.76px] size-[44.323px] top-[477.92px]">
@@ -1026,9 +1026,9 @@ function Frame9() {
   return (
     <div className="-translate-y-1/2 absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-1/2 w-[400px]" style={{ backgroundImage: "linear-gradient(180.00000000000207deg, rgba(249, 166, 241, 0.29) 21.29%, rgba(40, 0, 30, 0.29) 82.86%), linear-gradient(90deg, rgba(117, 5, 88, 0.75) 0%, rgba(117, 5, 88, 0.75) 100%)" }}>
       <Overlay />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Fun fact: Zolt has helped NRIs send over $10M back home. 💸.</p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Your karma is looking pretty good today. 😉</p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Fun fact: Zolt has helped NRIs send over $10M back home. 💸.</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Fun fact: Zolt has helped NRIs send over $10M back home. 💸.</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Your karma is looking pretty good today. 😉</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]">Fun fact: Zolt has helped NRIs send over $10M back home. 💸.</p>
       <Wheel />
       <Pin />
       <Logo />

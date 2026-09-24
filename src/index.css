@@ -2,141 +2,76 @@
 @import "tailwindcss";
 
 /*
-  The Figma Make export tags text with font-family names such as
-  "Plus Jakarta Sans:Medium", "Plus Jakarta Sans:Bold",
-  "Plus Jakarta Sans:SemiBold", "GC North Sans Demo:Extra Bold" and
-  "SF Pro:Semibold". Those exact names are not real installed families, so map
-  each Figma family name to a loaded web font. Weights still come from the
-  accompanying Tailwind font-weight classes (font-medium / font-semibold / font-bold).
+  Design tokens for the Figma file, exposed as Tailwind utilities:
+    font-jakarta · font-display · font-sfpro
+    animate-wheel-spin · animate-wheel-spinstop
+    animate-suspense-a/b/c · animate-marquee
 */
-[class*="Plus_Jakarta_Sans"] {
-  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+@theme {
+  /* Plus Jakarta Sans — body copy everywhere. */
+  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
+  /* "SPIN TO WIN" display face. GC North Sans is proprietary; Anton is the
+     closest free heavy display font with a matching width. */
+  --font-display: "Anton", "Archivo Black", system-ui, sans-serif;
+  /* iOS status-bar clock. */
+  --font-sfpro: -apple-system, "Segoe UI", system-ui, sans-serif;
+
+  /* Continuous wheel spin: 360deg every 1.1207s (Figma 321.4deg/s). */
+  --animate-wheel-spin: wheel-spin 1.1207s linear infinite;
+  /* One-shot 9s spin → steady → decelerate → stop (Frame 2 flow). */
+  --animate-wheel-spinstop: wheel-spinstop 9s linear forwards;
+  /* Suspense texts: 3s each inside the 9s spin; -50% X centring is baked in. */
+  --animate-suspense-a: suspense-a 9s ease-in-out forwards;
+  --animate-suspense-b: suspense-b 9s ease-in-out forwards;
+  --animate-suspense-c: suspense-c 9s ease-in-out forwards;
+  /* Reward ticker: duplicated row, translate -50% for a seamless loop. */
+  --animate-marquee: marquee 18s linear infinite;
+
+  @keyframes wheel-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes wheel-spinstop {
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(420deg); }
+    72%  { transform: rotate(2350deg); }
+    86%  { transform: rotate(2650deg); }
+    94%  { transform: rotate(2760deg); }
+    100% { transform: rotate(2800deg); }
+  }
+  @keyframes suspense-a {
+    0%   { opacity: 0; transform: translate(-50%, 40px); }
+    5%   { opacity: 1; transform: translate(-50%, 0); }
+    28%  { opacity: 1; transform: translate(-50%, 0); }
+    33%  { opacity: 0; transform: translate(-50%, -30px); }
+    100% { opacity: 0; transform: translate(-50%, -30px); }
+  }
+  @keyframes suspense-b {
+    0%   { opacity: 0; transform: translate(-50%, 40px); }
+    33%  { opacity: 0; transform: translate(-50%, 40px); }
+    38%  { opacity: 1; transform: translate(-50%, 0); }
+    61%  { opacity: 1; transform: translate(-50%, 0); }
+    66%  { opacity: 0; transform: translate(-50%, -30px); }
+    100% { opacity: 0; transform: translate(-50%, -30px); }
+  }
+  @keyframes suspense-c {
+    0%   { opacity: 0; transform: translate(-50%, 40px); }
+    66%  { opacity: 0; transform: translate(-50%, 40px); }
+    71%  { opacity: 1; transform: translate(-50%, 0); }
+    96%  { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -30px); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
-/* Big display headline ("SPIN TO WIN", "UPTO 100"). GC North Sans is proprietary
-   and not publicly available; Anton is the closest free heavy display font whose
-   width matches, so "SPIN TO WIN" fits on one line like the Figma. */
-[class*="GC_North_Sans"] {
-  font-family: "Anton", "Archivo Black", system-ui, sans-serif !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.5px;
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    margin: 0;
+  }
 }
-
-/* iOS status-bar clock. */
-[class*="SF_Pro"] {
-  font-family: -apple-system, "Segoe UI", system-ui, sans-serif !important;
-}
-
-/* Let the 844px-tall design scroll fully on shorter screens. */
-html,
-body,
-#root {
-  min-height: 100%;
-  margin: 0;
-}
-
-/* Frame 2 — continuous wheel spin. Figma motion: rotate 0 -> 2110.443deg over
-   6.5653s linear (321.4deg/s), i.e. 360deg every ~1.121s, looping. The
-   pointer/hub stay fixed; only the wedges and labels rotate. */
-@keyframes spinfast {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.spinning #spin-wedges,
-.spinning #spin-labels {
-  animation: spinfast 1.121s linear infinite !important;
-}
-
-/* ── Exact Figma Frame 2 (SpinTheWheel export) animations ──────────────────
-   Reproduced from the Figma motion-context so the export runs without the
-   runtime motion library. */
-
-/* Wheel: Figma rotates 0 -> 2110.443deg over 6.5653s (321.4deg/s) then snaps to
-   2800 in the final 4ms; the perceived motion is a continuous 360deg / 1.1207s
-   linear spin, which we loop seamlessly. */
-@keyframes f2WheelSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-.f2-wheel-spin {
-  animation: f2WheelSpin 1.1207s linear infinite;
-  will-change: transform;
-}
-
-/* One-shot spin for the spin -> stop -> reward flow. The wheel spins for the full
-   15s the suspense texts play: a bit fast at the start, a long steady spin, then
-   a smooth deceleration to a full stop right as the texts end. Keyframe angles
-   encode the speed curve, so the timing function is linear. */
-@keyframes f2WheelSpinStop {
-  0%   { transform: rotate(0deg); }      /* 0.0s */
-  10%  { transform: rotate(420deg); }    /* ~0.9s — fast start (~467deg/s) */
-  72%  { transform: rotate(2350deg); }   /* ~6.5s — steady spin (~346deg/s) */
-  86%  { transform: rotate(2650deg); }   /* decelerating */
-  94%  { transform: rotate(2760deg); }
-  100% { transform: rotate(2800deg); }   /* 9.0s — at rest */
-}
-.f2-wheel-spinstop {
-  animation: f2WheelSpinStop 9s linear forwards;
-  will-change: transform;
-}
-
-/* Suspense texts: 3-second timeline, one text shown per second, in order, played
-   once (Frame 3 appears when all three have completed). Each slides up + fades in
-   for its 1s window, then fades out. translateX(-50%) is baked into every keyframe
-   for horizontal centering. */
-@keyframes f2SuspenseA {
-  0%   { opacity: 0; transform: translate(-50%, 40px); }
-  5%   { opacity: 1; transform: translate(-50%, 0); }
-  28%  { opacity: 1; transform: translate(-50%, 0); }
-  33%  { opacity: 0; transform: translate(-50%, -30px); }
-  100% { opacity: 0; transform: translate(-50%, -30px); }
-}
-@keyframes f2SuspenseB {
-  0%   { opacity: 0; transform: translate(-50%, 40px); }
-  33%  { opacity: 0; transform: translate(-50%, 40px); }
-  38%  { opacity: 1; transform: translate(-50%, 0); }
-  61%  { opacity: 1; transform: translate(-50%, 0); }
-  66%  { opacity: 0; transform: translate(-50%, -30px); }
-  100% { opacity: 0; transform: translate(-50%, -30px); }
-}
-@keyframes f2SuspenseC {
-  0%   { opacity: 0; transform: translate(-50%, 40px); }
-  66%  { opacity: 0; transform: translate(-50%, 40px); }
-  71%  { opacity: 1; transform: translate(-50%, 0); }
-  96%  { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, -30px); }
-}
-/* 9s total = 3 seconds per text (each keyframe set spans one third of the timeline). */
-.f2-suspense-a { animation: f2SuspenseA 9s ease-in-out forwards; }
-.f2-suspense-b { animation: f2SuspenseB 9s ease-in-out forwards; }
-.f2-suspense-c { animation: f2SuspenseC 9s ease-in-out forwards; }
-
-/* Frame 4 ticker — scrolls the reward notifications leftward, looping. The row
-   is duplicated, so translating by -50% produces a seamless loop. */
-@keyframes f4Marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.f4-marquee {
-  animation: f4Marquee 18s linear infinite;
-  will-change: transform;
-}
-
-/* Frame 2 suspense text cross-fade: two texts, ~1s each, never overlapping.
-   The two keyframe sets are complementary so only one is ever at opacity > 0. */
-@keyframes f2A {
-  0% { opacity: 0; }
-  4% { opacity: 1; }
-  46% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 0; }
-}
-@keyframes f2B {
-  0% { opacity: 0; }
-  50% { opacity: 0; }
-  54% { opacity: 1; }
-  96% { opacity: 1; }
-  100% { opacity: 0; }
-}
-.f2-textA { animation: f2A 2s ease-in-out infinite; }
-.f2-textB { animation: f2B 2s ease-in-out infinite; }

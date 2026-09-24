@@ -2,11 +2,10 @@ import { useEffect, useState, type CSSProperties } from "react";
 import Onboarding01Option1Default from "../imports/index";
 import SpinTheWheel from "./SpinTheWheel";
 import RewardForm from "./RewardForm";
-import RewardEmail from "./RewardEmail";
 import RewardCode from "./RewardCode";
-import { DESKTOP_W, DESKTOP_H, DesktopMain, DesktopSpin, DesktopReward, DesktopEmail, DesktopCode } from "./Desktop";
+import { DESKTOP_W, DESKTOP_H, DesktopMain, DesktopSpin, DesktopReward, DesktopSignup, DesktopCode } from "./Desktop";
 
-type Screen = "main" | "spin" | "reward" | "email" | "code";
+type Screen = "main" | "spin" | "reward" | "email" | "code" | "qr";
 
 // How long Frame 2 shows before revealing Frame 3. The wheel starts a bit fast
 // and decelerates to a stop, while the three suspense texts play 3 seconds each
@@ -65,38 +64,42 @@ export default function App() {
     // Logical frame width: the full window width in design px (never below 1440).
     const frameW = Math.max(DESKTOP_W, Math.floor(viewW / scale));
     const frameH = Math.max(DESKTOP_H, Math.floor(viewH / scale));
-    const dark = screen === "reward" || screen === "email";
+    const dark = screen === "spin" || screen === "reward" || screen === "email";
     return (
       <div
-        className="h-screen w-full flex items-center justify-center overflow-hidden"
-        style={{ background: dark ? "#5c1648" : "linear-gradient(180deg, #fff2fe 20.8%, #ffc3fb 95.3%)" }}
+        className={`h-screen w-full flex items-center justify-center overflow-hidden ${
+          dark ? "bg-[#5c1648]" : "bg-[linear-gradient(180deg,#fff2fe_20.8%,#ffc3fb_95.3%)]"
+        }`}
+        // Only runtime numbers are passed in; every property is a Tailwind class.
+        style={
+          {
+            "--s": scale,
+            "--fw": `${frameW}px`,
+            "--fh": `${frameH}px`,
+            "--ext": `${(frameW - DESKTOP_W) / 2}px`,
+            "--exty": `${(frameH - DESKTOP_H) / 2}px`,
+          } as CSSProperties
+        }
       >
-        <div style={{ width: frameW * scale, height: frameH * scale }}>
-          <div
-            className="relative overflow-hidden"
-            style={
-              {
-                width: frameW,
-                height: frameH,
-                transform: `scale(${scale})`,
-                transformOrigin: "top left",
-                "--ext": `${(frameW - DESKTOP_W) / 2}px`,
-                "--exty": `${(frameH - DESKTOP_H) / 2}px`,
-              } as CSSProperties
-            }
-          >
+        <div className="w-[calc(var(--fw)*var(--s))] h-[calc(var(--fh)*var(--s))]">
+          <div className="relative overflow-hidden w-(--fw) h-(--fh) origin-top-left scale-(--s)">
             {screen === "main" && <DesktopMain onSpin={() => setScreen("spin")} />}
             {screen === "spin" && <DesktopSpin />}
-            {screen === "reward" && <DesktopReward onUnlock={() => setScreen("email")} />}
-            {screen === "email" && (
-              <DesktopEmail
-                onSubmit={(name) => {
+            {/* Frame 3 (7772:20384): form → Frame 4 */}
+            {(screen === "reward" || screen === "email") && (
+              <DesktopReward
+                onUnlock={(name) => {
                   setUserName(name);
                   setScreen("code");
                 }}
               />
             )}
-            {screen === "code" && <DesktopCode name={userName} onBack={() => setScreen("main")} />}
+            {/* Frame 4 (7772:20028): "Sign Up Now" → Frame 5; tap elsewhere → Frame 1 */}
+            {screen === "code" && (
+              <DesktopSignup name={userName} onSignUp={() => setScreen("qr")} onBack={() => setScreen("main")} />
+            )}
+            {/* Frame 5 (7807:20417): QR sign-up; tap outside the card → Frame 1 */}
+            {screen === "qr" && <DesktopCode name={userName} onBack={() => setScreen("main")} />}
           </div>
         </div>
       </div>
@@ -107,16 +110,8 @@ export default function App() {
     <div className={`min-h-screen w-full flex items-start justify-center overflow-x-hidden ${screen === "spin" || screen === "reward" || screen === "email" ? "bg-[#5c1648]" : "bg-[#fff2fe]"}`}>
       {/* Wrapper takes the on-screen (scaled) size so the frame stays centred and
           the app fills the device width on phones. */}
-      <div style={{ width: FRAME_W * scale, height: FRAME_H * scale }}>
-        <div
-          className="relative overflow-hidden"
-          style={{
-            width: FRAME_W,
-            height: FRAME_H,
-            transform: `scale(${scale})`,
-            transformOrigin: "top left",
-          }}
-        >
+      <div className="w-[calc(390px*var(--s))] h-[calc(844px*var(--s))]" style={{ "--s": scale } as CSSProperties}>
+        <div className="relative overflow-hidden w-[390px] h-[844px] origin-top-left scale-(--s)">
           {screen === "main" && (
             <Onboarding01Option1Default onSpin={() => setScreen("spin")} />
           )}
@@ -125,25 +120,20 @@ export default function App() {
               suspense texts play 5s each; once it stops, Frame 3 appears. */}
           {screen === "spin" && <SpinTheWheel phase="spinstop" />}
 
-          {/* Frame 3: Congratulations / reward card (node 7701:20255). "Unlock it!"
-              advances to Frame 4. */}
-          {screen === "reward" && (
-            <RewardForm onUnlock={() => setScreen("email")} />
-          )}
-
-          {/* Frame 4: name + email form (node 7701:20408). "Unlock the Reward"
-              advances to Frame 5. */}
-          {screen === "email" && (
-            <RewardEmail
-              onSubmit={(name) => {
+          {/* Frame 3: Congratulations + name/email form (node 7772:21011).
+              "Unlock your Reward!" advances to Frame 4. ("email" only exists on
+              desktop; if the window shrinks mid-flow it shows this form too.) */}
+          {(screen === "reward" || screen === "email") && (
+            <RewardForm
+              onUnlock={(name) => {
                 setUserName(name);
                 setScreen("code");
               }}
             />
           )}
 
-          {/* Frame 5: reward code (node 7701:19998). Tap to return to Frame 1. */}
-          {screen === "code" && (
+          {/* Frame 4: sign up + reward code (node 7772:21461). Tap to return to Frame 1. */}
+          {(screen === "code" || screen === "qr") && (
             <RewardCode name={userName} onBack={() => setScreen("main")} />
           )}
         </div>

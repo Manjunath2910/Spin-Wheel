@@ -1,4 +1,4 @@
-// Animations are driven by CSS (see src/index.css: .f2-wheel-spin, .f2-suspense-*)
+// Animations are driven by CSS (Tailwind animate-wheel-spin / animate-suspense-* from the @theme in src/index.css)
 // so the exact Figma export renders without the runtime motion dependency.
 import svgPaths from "@/imports/SpinTheWheelAnimation/svg-q30emd064u";
 import imgImg73391 from "@/imports/SpinTheWheelAnimation/f30fbe8263dd7fdee4c4d27d0713de568c6c4de6.png";
@@ -77,8 +77,8 @@ function Time() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pl-[16px] pr-[6px] relative size-full">
           <p
-            className="[word-break:break-word] font-['SF_Pro:Semibold',sans-serif] font-[590] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap"
-            style={{ fontVariationSettings: '"wdth" 100' }}
+            className="[word-break:break-word] font-sfpro font-[590] [font-variation-settings:'wdth'_100] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap"
+            
           >
             9:41
           </p>
@@ -199,7 +199,7 @@ export function SponsorLogo() {
 function Frame3() {
   return (
     <div className="-translate-x-1/2 absolute content-stretch flex flex-col gap-[4px] items-center left-[calc(50%+0.01px)] top-[770px]">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#e25dc0] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#e25dc0] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
       <SponsorLogo />
     </div>
   );
@@ -209,7 +209,7 @@ function Frame3() {
 
 function Frame5() {
   return (
-    <div className="[word-break:break-word] content-stretch flex flex-col font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] items-start mb-[-18px] not-italic relative shrink-0 text-[#a82486] uppercase w-[137.336px]">
+    <div className="[word-break:break-word] content-stretch flex flex-col font-display font-normal! tracking-[0.5px]! items-start mb-[-18px] not-italic relative shrink-0 text-[#a82486] uppercase w-[137.336px]">
       <p className="leading-[63px] mb-[-30px] relative shrink-0 text-[33.224px] tracking-[0.6645px] w-full">Spin to</p>
       <p className="h-[62.842px] leading-[80.324px] relative shrink-0 text-[65.236px] tracking-[1.3047px] w-full">win</p>
     </div>
@@ -221,7 +221,7 @@ function Frame4() {
     <div className="flex h-[45.445px] items-center justify-center relative shrink-0 w-full">
       <div className="-rotate-6 flex-none w-full">
         <div className="bg-[#ffd5b3] content-stretch flex items-center justify-center overflow-clip px-[12px] py-[4px] relative rounded-[16px] w-full">
-          <p className="[word-break:break-word] font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] leading-[21.577px] not-italic relative shrink-0 text-[#e56805] text-[22px] text-center tracking-[0.44px] uppercase whitespace-nowrap">upto €100</p>
+          <p className="[word-break:break-word] font-display font-normal! tracking-[0.5px]! leading-[21.577px] not-italic relative shrink-0 text-[#e56805] text-[22px] text-center tracking-[0.44px] uppercase whitespace-nowrap">upto €100</p>
         </div>
       </div>
     </div>
@@ -241,7 +241,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0">
       <Frame6 />
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[16px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[16px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
     </div>
   );
 }
@@ -395,52 +395,52 @@ function Group7() {
       </div>
       <div className="col-1 flex h-[24.216px] items-center justify-center ml-[142.86px] mt-[205.36px] relative row-1 w-[14.373px]">
         <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
         </div>
       </div>
       <div className="col-1 flex h-[20.756px] items-center justify-center ml-[71.98px] mt-[161.37px] relative row-1 w-[27.16px]">
         <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
         </div>
       </div>
       <div className="col-1 flex h-[20.174px] items-center justify-center ml-[205.84px] mt-[160.52px] relative row-1 w-[25.273px]">
         <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
         </div>
       </div>
       <div className="col-1 flex h-[21.855px] items-center justify-center ml-[201.84px] mt-[117.66px] relative row-1 w-[26.637px]">
         <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
         </div>
       </div>
       <div className="col-1 flex h-[21.947px] items-center justify-center ml-[174.85px] mt-[86px] relative row-1 w-[21.19px]">
         <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
         </div>
       </div>
       <div className="col-1 flex h-[29.118px] items-center justify-center ml-[179.75px] mt-[193.49px] relative row-1 w-[27.014px]">
         <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
         </div>
       </div>
       <div className="col-1 flex h-[28.991px] items-center justify-center ml-[96.13px] mt-[191.56px] relative row-1 w-[27.294px]">
         <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
         </div>
       </div>
       <div className="col-1 flex h-[32.42px] items-center justify-center ml-[51px] mt-[113.89px] relative row-1 w-[66.25px]">
         <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
         </div>
       </div>
       <div className="col-1 flex h-[34.231px] items-center justify-center ml-[95.9px] mt-[75.71px] relative row-1 w-[29.853px]">
         <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
         </div>
       </div>
       <div className="col-1 flex h-[66px] items-center justify-center ml-[144px] mt-[47.89px] relative row-1 w-[14px]">
         <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
         </div>
       </div>
     </div>
@@ -472,7 +472,7 @@ function Frame7() {
 function ButtonMain() {
   return (
     <div className="bg-[#750558] border-0 border-[#c044a0] border-solid content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[869.5px] shrink-0 w-[120px]" data-name="Button Main">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[14px] text-center whitespace-nowrap">{`Spin `}</p>
+      <p className="[word-break:break-word] font-jakarta font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[14px] text-center whitespace-nowrap">{`Spin `}</p>
     </div>
   );
 }
@@ -602,11 +602,13 @@ function Overlay() {
 // linear gradient #F9A6F1 -> #28001E at 29% fill opacity, no extra tint layer.
 // The sun-ray watermark ("Repeat group 1", node 7701:20362) is Figma's own SVG
 // export in frame coordinates (390x844), so every ray lines up 1:1.
-function Frame3Overlay() {
+function Frame3Overlay({ tint = false }: { tint?: boolean }) {
   return (
     <div
-      className="absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-[-19px] w-[400px]"
-      style={{ backgroundImage: "linear-gradient(180deg, rgba(249, 166, 241, 0.29) 21.29%, rgba(40, 0, 30, 0.29) 82.86%)" }}
+      className={`absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-[-19px] w-[400px] ${
+        // Form frame (7772:21116) adds a 75% #750558 layer over the same gradient.
+        tint ? "bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_21.29%,rgba(40,0,30,0.29)_82.86%),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]" : "bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_21.29%,rgba(40,0,30,0.29)_82.86%)]"
+      }`}
       data-node-id="7701:20360"
     >
       <svg
@@ -706,110 +708,102 @@ function WheelDotCInner(props: { rot: string }) {
 function AnimatedWheel({ phase = "loop" }: { phase?: "loop" | "spinstop" }) {
   return (
     <div
-      className={`${phase === "spinstop" ? "f2-wheel-spinstop" : "f2-wheel-spin"} absolute overflow-visible`}
+      className={`${phase === "spinstop" ? "animate-wheel-spinstop" : "animate-wheel-spin"} will-change-transform absolute overflow-visible left-[44.44px] top-[349.58px] w-[300.946px] h-[301px] origin-center`}
       data-name="Wheel"
-      style={{ left: "44.44px", top: "349.58px", width: "300.946px", height: "301px", transformOrigin: "center center" }}
     >
       <Group11 />
       {/* Outer stroke ring with the Figma wheel's soft drop-shadow. */}
       <div
-        className="absolute"
-        style={{
-          left: "35.99px",
-          top: "35.68px",
-          width: "229.135px",
-          height: "229.135px",
-          filter: "drop-shadow(0px 2px 5px rgba(28,0,22,0.33))",
-        }}
+        className="absolute left-[35.99px] top-[35.68px] w-[229.135px] h-[229.135px] drop-shadow-[0px_2px_5px_rgba(28,0,22,0.33)]"
       >
         <svg className="absolute block inset-0 size-full" fill="none" height="229.135" preserveAspectRatio="none" viewBox="0 0 229.135 229.135" width="229.135">
           <circle cx="114.567" cy="114.567" r="110.673" stroke="#FFF2FE" strokeWidth="7.78857" />
         </svg>
       </div>
       {/* Perimeter dots */}
-      <div className="absolute" style={{ left: "238.5px", top: "83.77px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute left-[238.5px] top-[83.77px] w-[4.253px] h-[4.253px]">
         <WheelDotA />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "58.23px", top: "83.77px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute flex items-center justify-center left-[58.23px] top-[83.77px] w-[4.253px] h-[4.253px]">
         <WheelDotBInner />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "181.62px", top: "42.55px", width: "5.378px", height: "5.378px" }}>
+      <div className="absolute flex items-center justify-center left-[181.62px] top-[42.55px] w-[5.378px] h-[5.378px]">
         <WheelDotCInner rot="rotate-[-108.39deg]" />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "181.62px", top: "252.91px", width: "5.378px", height: "5.378px" }}>
+      <div className="absolute flex items-center justify-center left-[181.62px] top-[252.91px] w-[5.378px] h-[5.378px]">
         <WheelDotCInner rot="rotate-[-108.39deg]" />
       </div>
-      <div className="absolute" style={{ left: "259.44px", top: "148.23px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute left-[259.44px] top-[148.23px] w-[4.253px] h-[4.253px]">
         <WheelDotA />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "37.29px", top: "148.23px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute flex items-center justify-center left-[37.29px] top-[148.23px] w-[4.253px] h-[4.253px]">
         <WheelDotBInner />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "113.85px", top: "43.01px", width: "5.378px", height: "5.378px" }}>
+      <div className="absolute flex items-center justify-center left-[113.85px] top-[43.01px] w-[5.378px] h-[5.378px]">
         <WheelDotCInner rot="rotate-[-108.39deg]" />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "113.53px", top: "253.05px", width: "5.378px", height: "5.378px" }}>
+      <div className="absolute flex items-center justify-center left-[113.53px] top-[253.05px] w-[5.378px] h-[5.378px]">
         <WheelDotCInner rot="rotate-[-108.39deg]" />
       </div>
-      <div className="absolute" style={{ left: "237.52px", top: "213.98px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute left-[237.52px] top-[213.98px] w-[4.253px] h-[4.253px]">
         <WheelDotA />
       </div>
-      <div className="absolute flex items-center justify-center" style={{ left: "59.21px", top: "213.98px", width: "4.253px", height: "4.253px" }}>
+      <div className="absolute flex items-center justify-center left-[59.21px] top-[213.98px] w-[4.253px] h-[4.253px]">
         <WheelDotBInner />
       </div>
       {/* Price labels */}
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "150.04px", top: "205.36px", width: "14.373px", height: "24.216px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[150.04px] top-[205.36px] w-[14.373px] h-[24.216px]">
         <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "85.56px", top: "161.06px", width: "29.061px", height: "21.377px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[85.56px] top-[161.06px] w-[29.061px] h-[21.377px]">
         <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€50</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€50</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "218.47px", top: "160.52px", width: "25.273px", height: "20.174px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[218.47px] top-[160.52px] w-[25.273px] h-[20.174px]">
         <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "215.16px", top: "117.67px", width: "26.637px", height: "21.855px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[215.16px] top-[117.67px] w-[26.637px] h-[21.855px]">
         <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "185.44px", top: "86px", width: "21.19px", height: "21.947px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[185.44px] top-[86px] w-[21.19px] h-[21.947px]">
         <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "193.25px", top: "193.49px", width: "27.014px", height: "29.118px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[193.25px] top-[193.49px] w-[27.014px] h-[29.118px]">
         <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "109.46px", top: "192.33px", width: "26.661px", height: "28.217px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[109.46px] top-[192.33px] w-[26.661px] h-[28.217px]">
         <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€35</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€35</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "84.6px", top: "120.04px", width: "27.048px", height: "20.414px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[84.6px] top-[120.04px] w-[27.048px] h-[20.414px]">
         <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€65</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€65</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "110.82px", top: "78.99px", width: "25.254px", height: "27.686px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[110.82px] top-[78.99px] w-[25.254px] h-[27.686px]">
         <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute flex items-center justify-center" style={{ left: "151.01px", top: "64.89px", width: "14px", height: "32px" }}>
+      <div className="-translate-x-1/2 absolute flex items-center justify-center left-[151.01px] top-[64.89px] w-[14px] h-[32px]">
         <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€100</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€100</p>
         </div>
       </div>
       {/* Center hub */}
-      <div className="absolute" style={{ left: "128.32px", top: "128.34px", width: "44.323px", height: "44.323px" }}>
+      <div className="absolute left-[128.32px] top-[128.34px] w-[44.323px] h-[44.323px]">
         <div className="absolute inset-[0_-5.76%_-6.5%_0]">
           <svg className="block size-full" fill="none" height="47.202" preserveAspectRatio="none" viewBox="0 0 46.8748 47.202" width="46.8748">
             <g filter="url(#filter0_d_0_26)">
@@ -896,28 +890,27 @@ function Logo() {
 // ── Frame9 (animated overlay panel with text + wheel) ───────────────────────
 
 // NB: horizontal centering (translateX(-50%)) is applied inside the CSS keyframes
-// (.f2-suspense-*) together with the animated vertical offset, so it is omitted here.
-const textBaseClass = "[word-break:break-word] absolute font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]";
+// (animate-suspense-*) together with the animated vertical offset, so it is omitted here.
+const textBaseClass = "[word-break:break-word] absolute font-jakarta font-semibold leading-[1.3] left-1/2 text-[#fef5fd] text-[16px] text-center top-[calc(50%-148.04px)] w-[247.809px]";
 
 function Frame9({ phase = "loop", showWheel = true }: { phase?: "loop" | "spinstop"; showWheel?: boolean }) {
   return (
     <div
-      className="-translate-y-1/2 absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-1/2 w-[400px]"
-      style={{ backgroundImage: "linear-gradient(180.00000000000207deg, rgba(249, 166, 241, 0.29) 21.29%, rgba(40, 0, 30, 0.29) 82.86%), linear-gradient(90deg, rgba(117, 5, 88, 0.75) 0%, rgba(117, 5, 88, 0.75) 100%)" }}
+      className="-translate-y-1/2 absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-1/2 w-[400px] bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_21.29%,rgba(40,0,30,0.29)_82.86%),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]"
     >
       <Overlay />
       {showWheel && (
         <>
-          {/* text 4 — node 1:199 (CSS keyframes f2-suspense-a, exact Figma timing) */}
-          <p className={`${textBaseClass} f2-suspense-a`}>
+          {/* text 4 — node 1:199 (CSS keyframes animate-suspense-a, exact Figma timing) */}
+          <p className={`${textBaseClass} animate-suspense-a`}>
             Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
           </p>
           {/* text 3 — node 1:198 */}
-          <p className={`${textBaseClass} f2-suspense-b`}>
+          <p className={`${textBaseClass} animate-suspense-b`}>
             Your karma is looking pretty good today. 😉
           </p>
           {/* text 1 — node 1:197 */}
-          <p className={`${textBaseClass} f2-suspense-c`}>
+          <p className={`${textBaseClass} animate-suspense-c`}>
             Fun fact: Zolt has helped NRIs send over $10M back home. 💸.
           </p>
           <AnimatedWheel phase={phase} />
@@ -939,8 +932,19 @@ export default function SpinTheWheel({
   phase?: "loop" | "spinstop";
   showWheel?: boolean;
   /** "reward" = Frame 3 background (node 7701:20255): #741C59 base + its own overlay. */
-  variant?: "spin" | "reward";
+  /** "form" = new mobile Frame 3 (7772:21011): #D2AECE base + tinted overlay. */
+  variant?: "spin" | "reward" | "form";
 }) {
+  if (variant === "form") {
+    return (
+      <div className="bg-[#d2aece] relative size-full" data-name="Frame 3 (form) background">
+        <Frame3 />
+        <Frame8 />
+        <Group8 />
+        <Frame3Overlay tint />
+      </div>
+    );
+  }
   if (variant === "reward") {
     return (
       <div className="bg-[#741c59] relative size-full" data-name="Frame 3 background">

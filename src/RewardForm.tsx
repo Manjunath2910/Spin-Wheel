@@ -1,58 +1,74 @@
+import { useState } from "react";
 import SpinTheWheel from "./SpinTheWheel";
 import imgGift from "@/imports/SpinTheWheelAnimation/28abd.png";
 import imgCoins from "@/imports/SpinTheWheelAnimation/5d417.png";
 import imgConfetti from "@/imports/SpinTheWheelAnimation/f1aa9.svg";
-import imgBlurCode from "@/imports/blur-code-narrow.png";
+import imgBlurCode from "@/imports/blur-code.png";
 
-// Frame 3 — "Congratulations! You won." reward card (Figma node 7701:20255).
-// The background is Frame 3's own layer stack from Figma: #741C59 base, the
-// blurred Frame 1 content, then overlay 7701:20360 (gradient + sun-ray watermark).
-export default function RewardForm({ onUnlock }: { onUnlock?: () => void }) {
+// Mobile Frame 3 — "Congratulations! You won." + name/email form (Figma node 7772:21011).
+// Card 7772:21120 sits at (50,257) inside overlay 7772:21116 at (-5,-19) → (45,238).
+const label = "font-jakarta font-medium leading-[normal] text-[12px] text-[#3e002e] whitespace-nowrap";
+const inputText =
+  "w-full bg-transparent border-0 outline-none p-0 m-0 font-jakarta font-medium leading-[1.24] text-[14px] text-[#3e002e] placeholder:text-[#3e002e]";
+
+export default function RewardForm({ onUnlock }: { onUnlock?: (name: string, email: string) => void }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
     <div className="relative size-full">
-      {/* Exact Frame 3 background (node 7701:20360 + underlying content). */}
-      <SpinTheWheel variant="reward" />
+      {/* Background: #D2AECE base, blurred Frame 1 content, tinted overlay + sun-rays. */}
+      <SpinTheWheel variant="form" />
 
-      {/* Card (node 7701:20364). Figma places it at (50,257) inside overlay
-          7701:20360, which sits at (-5,-19) → (45,238) in frame coordinates. */}
-      <div className="absolute left-[45px] top-[238px] w-[301px] flex flex-col gap-[24px] items-center pt-[65px] pb-[32px] px-[24px] rounded-[16px] overflow-clip border-[1.741px] border-[#eadbcd] border-solid bg-gradient-to-b from-[#fff7fd] from-[58.879%] to-[#fff2fe] to-[191.74%] shadow-[0px_-4px_19.7px_-3px_rgba(12,11,10,0.65)]">
-        {/* Confetti (node 7701:20369) */}
-        <div className="absolute inset-[calc(28.12%-0.76px)_calc(1.33%-1.69px)_calc(8.17%-1.46px)_calc(-1.33%-1.79px)] pointer-events-none">
+      {/* Card (node 7772:21120) */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onUnlock?.(name, email);
+        }}
+        className="absolute left-[45px] top-[238px] w-[301px] flex flex-col gap-[24px] items-center pt-[65px] pb-[32px] px-[24px] rounded-[16px] overflow-clip border-[1.741px] border-[#eadbcd] border-solid bg-gradient-to-b from-[#fff7fd] from-[58.879%] to-[#fff2fe] to-[191.74%] shadow-[0px_-4px_19.7px_-3px_rgba(12,11,10,0.65)]"
+      >
+        {/* Title block (node 7772:21121) */}
+        <div className="relative flex flex-col gap-[8px] items-center w-full">
+          <p className="w-full font-jakarta font-semibold leading-[1.3] text-[#2e1e1e] text-[20px] text-center tracking-[-0.4px]">
+            Congratulations! You won.
+          </p>
+          <p className="w-[238.773px] font-jakarta font-medium leading-[1.35] text-[#887065] text-[14px] text-center">
+            Enter your email, and get the code!
+          </p>
+        </div>
+
+        {/* Confetti (node 7772:21125) — behind the code box and fields */}
+        <div className="absolute inset-[calc(18.8%-1.09px)_calc(1.33%-1.69px)_calc(38.63%-0.4px)_calc(-1.33%-1.79px)] pointer-events-none">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgConfetti} />
         </div>
 
-        {/* Title block (node 7701:20365) */}
-        <div className="flex flex-col gap-[8px] items-center w-full relative">
-          <div className="flex items-start w-full">
-            <p className="flex-[1_0_0] min-w-px font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] text-[#2e1e1e] text-[20px] text-center tracking-[-0.4px]">
-              Congratulations! You won.
-            </p>
+        {/* Hidden reward code box (node 7772:21151) — Figma's noise-dissolved "€h99!" */}
+        <img src={imgBlurCode} alt="Reward code hidden until unlocked" className="relative block w-full h-[102px] select-none" />
+
+        {/* Name (node 7772:21154) */}
+        <label className="relative flex flex-col gap-[6.963px] items-start w-full">
+          <span className={label}>Name</span>
+          <div className="bg-white border-[0.87px] border-[#ffefe3] border-solid flex items-center px-[17.407px] py-[10.444px] rounded-[10.444px] w-full">
+            <input type="text" autoComplete="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Rahul Singh" className={inputText} />
           </div>
-          <p className="font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.35] text-[#887065] text-[14px] text-center w-[199px]">
-            Unlock your reward now!
-          </p>
-        </div>
+        </label>
 
-        {/* Reward code box (node 7701:20395) — narrow white box with the code
-            obscured by the exact Figma dissolve. relative z-[1] keeps it above the
-            confetti (Figma: confetti sits behind the box). */}
-        <img
-          src={imgBlurCode}
-          alt="Reward code hidden until unlocked"
-          className="relative z-[1] block w-[167px] h-auto select-none"
-        />
+        {/* Email (node 7772:21158) */}
+        <label className="relative flex flex-col gap-[6.963px] items-start w-full">
+          <span className={label}>Email</span>
+          <div className="bg-white border-[1.741px] border-[#ffefe3] border-solid flex items-start px-[17.407px] py-[10.444px] rounded-[10.444px] w-full">
+            <input type="email" autoComplete="email" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="rahulsingh21@gmail.com" className={inputText} />
+          </div>
+        </label>
 
-        {/* Button (node 7701:20398) — advances to Frame 4. */}
-        <button
-          type="button"
-          onClick={() => onUnlock?.()}
-          className="relative z-[1] h-[45px] bg-[#750558] flex items-center justify-center px-[20px] py-[12px] rounded-[869.5px] cursor-pointer"
-        >
-          <p className="font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] text-[14px] text-[#fff2fe] text-center whitespace-nowrap">
-            Unlock it!
-          </p>
+        {/* Button (node 7772:21162) — goes to Frame 4 */}
+        <button type="submit" className="relative bg-[#750558] flex items-center justify-center px-[20px] py-[12px] rounded-[869.5px] cursor-pointer border-0">
+          <span className="font-jakarta font-semibold leading-[1.3] text-[16px] text-[#fff2fe] text-center whitespace-nowrap">
+            Unlock your Reward!
+          </span>
         </button>
-      </div>
+      </form>
 
       {/* Gift + coins cluster (nodes 7772:21164-21172), on top of the card. */}
       <div className="absolute contents left-[calc(20%+42px)] top-[164px]">

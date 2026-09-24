@@ -7,7 +7,7 @@ function Time() {
     <div className="flex-[1_0_0] min-w-px relative" data-name="Time">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center pl-[16px] pr-[6px] relative size-full">
-          <p className="[word-break:break-word] font-['SF_Pro:Semibold',sans-serif] font-[590] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap" style={{ fontVariationSettings: '"wdth" 100' }}>
+          <p className="[word-break:break-word] font-sfpro font-[590] [font-variation-settings:'wdth'_100] leading-[22px] relative shrink-0 text-[#454545] text-[17px] text-center whitespace-nowrap">
             9:41
           </p>
         </div>
@@ -133,13 +133,13 @@ function Group6() {
 function Frame11() {
   return (
     <div className="bg-[#ffe2ff] border border-[#ffc3fb] border-solid content-stretch flex items-center justify-center px-[12px] py-[5px] relative rounded-[32px] shrink-0">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[0] relative shrink-0 text-[#28001e] text-[0px] text-center whitespace-pre">
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[0] relative shrink-0 text-[#28001e] text-[0px] text-center whitespace-pre">
         <span className="leading-[1.2] text-[14px]">Only</span>
         <span className="leading-[1.2] text-[14px]">{` `}</span>
-        <span className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#a82486] text-[14px]">20</span>
+        <span className="font-jakarta font-bold leading-[1.2] text-[#a82486] text-[14px]">20</span>
         <span className="leading-[1.2] text-[#a82486] text-[14px]">{` `}</span>
-        <span className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[#a82486] text-[14px]">Rewards</span>
-        <span className="font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2] text-[14px]">{` `}</span>
+        <span className="font-jakarta font-bold leading-[1.2] text-[#a82486] text-[14px]">Rewards</span>
+        <span className="font-jakarta font-bold leading-[1.2] text-[14px]">{` `}</span>
         <span className="leading-[1.2] text-[14px]">{`are left  `}</span>
       </p>
     </div>
@@ -149,7 +149,7 @@ function Frame11() {
 function Frame8() {
   return (
     <div className="content-stretch flex flex-col gap-[8px] items-center relative shrink-0 w-[217px]">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] min-w-full relative shrink-0 text-[#898989] text-[13px] text-center w-[min-content]">Total Rewards 100:</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] min-w-full relative shrink-0 text-[#898989] text-[13px] text-center w-[min-content]">Total Rewards 100:</p>
       <Frame11 />
     </div>
   );
@@ -157,7 +157,7 @@ function Frame8() {
 
 function Frame4() {
   return (
-    <div className="[word-break:break-word] content-stretch flex font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] gap-[7px] items-start justify-center leading-none mb-[-20px] not-italic relative shrink-0 text-[#a82486] uppercase">
+    <div className="[word-break:break-word] content-stretch flex font-display font-normal! tracking-[0.5px]! gap-[7px] items-start justify-center leading-none mb-[-20px] not-italic relative shrink-0 text-[#a82486] uppercase">
       <p className="relative shrink-0 text-[33.224px] tracking-[0.6645px] whitespace-nowrap">Spin to</p>
       <p className="h-[36.371px] relative shrink-0 text-[39.176px] tracking-[0.7835px] w-[82.474px]">win</p>
     </div>
@@ -170,7 +170,7 @@ function Frame3() {
       <div className="flex-none rotate-[-1.57deg]">
         <div className="bg-white relative rounded-[24.886px] w-[232.268px]">
           <div className="content-stretch flex items-center justify-center overflow-clip px-[18.665px] py-[6.222px] relative rounded-[inherit] size-full">
-            <p className="[word-break:break-word] font-['GC_North_Sans_Demo:Extra_Bold',sans-serif] leading-[33.561px] not-italic relative shrink-0 text-[#e56805] text-[34.219px] text-center tracking-[0.6844px] uppercase whitespace-nowrap">upto €100</p>
+            <p className="[word-break:break-word] font-display font-normal! tracking-[0.5px]! leading-[33.561px] not-italic relative shrink-0 text-[#e56805] text-[34.219px] text-center tracking-[0.6844px] uppercase whitespace-nowrap">upto €100</p>
           </div>
           <div aria-hidden className="absolute border-[#f8efe7] border-[1.555px] border-solid inset-[-0.777px] pointer-events-none rounded-[25.663px]" />
         </div>
@@ -192,7 +192,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0">
       <Frame5 />
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#750558] text-[12px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#750558] text-[12px] text-center whitespace-nowrap">Spin the wheel to test your luck!</p>
     </div>
   );
 }
@@ -443,52 +443,52 @@ function Frame10() {
       <UuidB09628E381244D6BB66C36Edea1E00Cb />
       <div className="-translate-x-1/2 absolute flex h-[24.216px] items-center justify-center left-[149.57px] top-[185.69px] w-[14.373px]">
         <div className="flex-none rotate-[89.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€25</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[119.29px] flex h-[20.756px] items-center justify-center left-[85.09px] translate-y-full w-[27.16px]">
         <div className="flex-none rotate-[161.92deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€75</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[120.15px] flex h-[20.174px] items-center justify-center left-[218px] translate-y-full w-[25.273px]">
         <div className="flex-none rotate-[18.21deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€15</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[21.855px] items-center justify-center left-[214.68px] top-[98px] w-[26.637px]">
         <div className="flex-none rotate-[-22.93deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#fff2fe] text-[12px] text-center whitespace-nowrap">€10</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bottom-[194.66px] flex h-[21.947px] items-center justify-center left-[184.97px] translate-y-full w-[21.19px]">
         <div className="flex-none rotate-[-55.27deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€5</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[29.118px] items-center justify-center left-[192.78px] top-[173.83px] w-[27.014px]">
         <div className="flex-none rotate-[52.12deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€20</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[28.991px] items-center justify-center left-[109.3px] top-[171.89px] w-[27.294px]">
         <div className="flex-none rotate-[129.26deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">€50</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[32.42px] items-center justify-center left-[83.65px] top-[94.23px] w-[66.25px]">
         <div className="flex-none rotate-[-162.97deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">TRY AGAIN!</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[34.231px] items-center justify-center left-[110.35px] top-[56.05px] w-[29.853px]">
         <div className="flex-none rotate-[-125.1deg]">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[#28001e] text-[12px] text-center whitespace-nowrap">€100</p>
         </div>
       </div>
       <div className="-translate-x-1/2 absolute flex h-[66px] items-center justify-center left-[150.52px] top-[28.23px] w-[14px]">
         <div className="-rotate-90 flex-none">
-          <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
+          <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative text-[12px] text-center text-white whitespace-nowrap">SO CLOSE!</p>
         </div>
       </div>
     </div>
@@ -503,7 +503,7 @@ function Frame13() {
         <div aria-hidden className="absolute border-0 border-[#c044a0] border-solid inset-0 pointer-events-none rounded-[869.5px]" />
         <div className="flex flex-row items-center justify-center size-full">
           <div className="content-stretch flex items-center justify-center px-[20px] py-[12px] relative size-full">
-            <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:SemiBold',sans-serif] font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[12.19px] text-center whitespace-nowrap">Spin The Wheel</p>
+            <p className="[word-break:break-word] font-jakarta font-semibold leading-[1.3] relative shrink-0 text-[#fff2fe] text-[12.19px] text-center whitespace-nowrap">Spin The Wheel</p>
           </div>
         </div>
       </div>
@@ -514,10 +514,10 @@ function Frame13() {
 function Texts() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Texts">
-      <div className="[word-break:break-word] flex flex-col font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#af0e89] text-[13px] whitespace-nowrap">
+      <div className="[word-break:break-word] flex flex-col font-jakarta font-medium justify-center leading-[0] relative shrink-0 text-[#af0e89] text-[13px] whitespace-nowrap">
         <p>
           <span className="leading-[1.2]">{`Aarav just got `}</span>
-          <span className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2]">€25 reward.</span>
+          <span className="[word-break:break-word] font-jakarta font-bold leading-[1.2]">€25 reward.</span>
         </p>
       </div>
     </div>
@@ -527,10 +527,10 @@ function Texts() {
 function Texts1() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0" data-name="Texts">
-      <div className="[word-break:break-word] flex flex-col font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#af0e89] text-[13px] whitespace-nowrap">
+      <div className="[word-break:break-word] flex flex-col font-jakarta font-medium justify-center leading-[0] relative shrink-0 text-[#af0e89] text-[13px] whitespace-nowrap">
         <p>
           <span className="leading-[1.2]">{`Ankit just got `}</span>
-          <span className="[word-break:break-word] font-['Plus_Jakarta_Sans:Bold',sans-serif] font-bold leading-[1.2]">€100 reward.</span>
+          <span className="[word-break:break-word] font-jakarta font-bold leading-[1.2]">€100 reward.</span>
         </p>
       </div>
     </div>
@@ -639,7 +639,7 @@ function Group5() {
 function Frame2() {
   return (
     <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0 w-full">
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#af0e89] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#af0e89] text-[14px] text-center whitespace-nowrap">Official Sponsor</p>
       <Group5 />
     </div>
   );
@@ -649,7 +649,7 @@ function Frame7() {
   return (
     <div className="content-stretch flex flex-col gap-[12px] items-center py-[20px] relative shrink-0 w-full">
       <Frame2 />
-      <p className="[word-break:break-word] font-['Plus_Jakarta_Sans:Medium',sans-serif] font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[14px] text-center whitespace-nowrap">{`*Terms &Conditions Apply`}</p>
+      <p className="[word-break:break-word] font-jakarta font-medium leading-[1.2] relative shrink-0 text-[#898989] text-[14px] text-center whitespace-nowrap">{`*Terms &Conditions Apply`}</p>
     </div>
   );
 }

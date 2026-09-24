@@ -3,6 +3,7 @@
 import svgPaths from "@/imports/SpinTheWheelAnimation/svg-q30emd064u";
 import imgImg73391 from "@/imports/SpinTheWheelAnimation/f30fbe8263dd7fdee4c4d27d0713de568c6c4de6.png";
 import imgCoins from "@/imports/SpinTheWheelAnimation/3802f91808ac57b52c9b3fa5768079a91b6f0c80.png";
+import imgFrame2Headline from "./imports/frame2-headline.svg";
 
 // ── Dot SVG helpers ──────────────────────────────────────────────────────────
 
@@ -207,32 +208,13 @@ function Frame3() {
 
 // ── Win section (Frame8) ─────────────────────────────────────────────────────
 
-function Frame5() {
-  return (
-    <div className="[word-break:break-word] content-stretch flex flex-col font-display font-normal! tracking-[0.5px]! items-start mb-[-18px] not-italic relative shrink-0 text-[#a82486] uppercase w-[137.336px]">
-      <p className="leading-[63px] mb-[-30px] relative shrink-0 text-[33.224px] tracking-[0.6645px] w-full">Spin to</p>
-      <p className="h-[62.842px] leading-[80.324px] relative shrink-0 text-[65.236px] tracking-[1.3047px] w-full">win</p>
-    </div>
-  );
-}
-
-function Frame4() {
-  return (
-    <div className="flex h-[45.445px] items-center justify-center relative shrink-0 w-full">
-      <div className="-rotate-6 flex-none w-full">
-        <div className="bg-[#ffd5b3] content-stretch flex items-center justify-center overflow-clip px-[12px] py-[4px] relative rounded-[16px] w-full">
-          <p className="[word-break:break-word] font-display font-normal! tracking-[0.5px]! leading-[21.577px] not-italic relative shrink-0 text-[#e56805] text-[22px] text-center tracking-[0.44px] uppercase whitespace-nowrap">upto €100</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame6() {
+  // Exact "SPIN TO / WIN" + "upto €100" block (Figma 7772:21203) exported as
+  // outlined SVG, so the proprietary GC North Sans glyphs match 1:1. The block is
+  // 149.33×123.29; the export's origin is the rotated pill's left edge (-1.16px).
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-[149.331px]">
-      <Frame5 />
-      <Frame4 />
+    <div className="relative shrink-0 w-[149.331px] h-[123.29px]">
+      <img src={imgFrame2Headline} alt="Spin to win — upto €100" className="absolute left-[-1.16px] top-0 w-[152px] h-[124px] max-w-none" />
     </div>
   );
 }
@@ -555,53 +537,43 @@ function Group8() {
 // ── Overlay background ───────────────────────────────────────────────────────
 
 function Overlay() {
+  // Sun-ray watermark, exact Figma export of "Overlay" (7772:21280) in the 390×844
+  // frame's coordinates. The parent (Frame 2147241217) sits at (-5, -18.5), so the
+  // SVG is offset back by that amount; the parent's overflow-clip trims the rays.
   return (
-    <div className="-translate-x-1/2 -translate-y-1/2 absolute flex items-center justify-center left-[calc(50%-8px)] size-[1254px] top-[calc(50%+84px)]">
-      <div className="flex-none rotate-90">
-        <div className="relative size-[1254px]" data-name="Overlay">
-          <svg className="absolute block inset-0 size-full" fill="none" height="1254" preserveAspectRatio="none" viewBox="0 0 1254 1254" width="1254" xmlnsXlink="http://www.w3.org/1999/xlink">
-            <g clipPath="url(#clip0_0_50)" id="Overlay">
-              <g id="Repeat group 1">
-                {/* Sun-ray base. NB: the id must have NO spaces and be referenced
-                    without URL-encoding, otherwise mobile Safari/Chrome fail to
-                    resolve the <use> copies and only one ray renders. */}
-                <g id="f2sunray" data-figma-trr="r8u1-0f">
-                  <path d={svgPaths.p3a611100} fill="#3A092D" fillOpacity="0.37" id="Vector 248" stroke="#9C3C8F" />
-                </g>
-                <use transform="translate(612.491 -233.199) rotate(45)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(1210.49 35.0006) rotate(90)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(1443.68 647.492) rotate(135)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(1175.48 1245.49) rotate(-180)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(562.993 1478.69) rotate(-135)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(-35.0006 1210.49) rotate(-90)" href="#f2sunray" xlinkHref="#f2sunray" />
-                <use transform="translate(-268.2 597.993) rotate(-45)" href="#f2sunray" xlinkHref="#f2sunray" />
-              </g>
-              <g filter="url(#filter0_f_0_50)" id="Ellipse 1547">
-                <circle cx="592.829" cy="625.964" fill="#692359" r="56.4336" transform="rotate(-90 592.829 625.964)" />
-              </g>
-            </g>
-            <defs>
-              <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="226.067" id="filter0_f_0_50" width="226.067" x="479.796" y="512.931">
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
-                <feGaussianBlur result="effect1_foregroundBlur_0_50" stdDeviation="28.3" />
-              </filter>
-              <clipPath id="clip0_0_50">
-                <rect fill="white" height="1254" width="1254" />
-              </clipPath>
-            </defs>
-          </svg>
-        </div>
-      </div>
-    </div>
+    <svg
+      className="absolute block left-[5px] top-[18.5px] w-[390px] h-[844px] overflow-visible"
+      fill="none"
+      viewBox="0 0 390 844"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      data-node-id="7772:21280"
+    >
+      {/* NB: the id must have NO spaces and be referenced without URL-encoding,
+          otherwise mobile Safari/Chrome fail to resolve the <use> copies. */}
+      <g id="f2sunray">
+        <path d="M-663.316 827.854L190.8 464.15L-734.394 419.533L-663.316 827.854Z" fill="#3A092D" fillOpacity="0.37" stroke="#9C3C8F" />
+      </g>
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(386.054 1.4654) rotate(45)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(657.999 275.483) rotate(90)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(656.534 661.537) rotate(135)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(382.516 933.482) rotate(-180)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-3.53786 932.017) rotate(-135)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-275.483 657.999) rotate(-90)" />
+      <use href="#f2sunray" xlinkHref="#f2sunray" transform="translate(-274.018 271.945) rotate(-45)" />
+      <g filter="url(#f2glow)">
+        <circle cx="188.035" cy="471.828" r="56.4336" fill="#692359" />
+      </g>
+      <defs>
+        <filter id="f2glow" x="75.0016" y="358.795" width="226.067" height="226.067" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur stdDeviation="28.3" />
+        </filter>
+      </defs>
+    </svg>
   );
 }
 
-// ── Frame 3 overlay (Figma node 7701:20360) ──────────────────────────────────
-// Exact Figma values: 400x881 at (-5,-19), background blur 7.6 (CSS 3.8px),
-// linear gradient #F9A6F1 -> #28001E at 29% fill opacity, no extra tint layer.
-// The sun-ray watermark ("Repeat group 1", node 7701:20362) is Figma's own SVG
-// export in frame coordinates (390x844), so every ray lines up 1:1.
 function Frame3Overlay({ tint = false }: { tint?: boolean }) {
   return (
     <div
@@ -896,7 +868,9 @@ const textBaseClass = "[word-break:break-word] absolute font-jakarta font-semibo
 function Frame9({ phase = "loop", showWheel = true }: { phase?: "loop" | "spinstop"; showWheel?: boolean }) {
   return (
     <div
-      className="-translate-y-1/2 absolute backdrop-blur-[3.8px] h-[881px] left-[-5px] overflow-clip top-1/2 w-[400px] bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_21.29%,rgba(40,0,30,0.29)_82.86%),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]"
+      // Frame 2147241217 (7772:21279): 400×881 at (-5, -18.5); grows by --exty on tall
+      // phones. Gradient stops are in px (21.29% / 82.86% of 881) so it never stretches.
+      className="absolute backdrop-blur-[3.8px] h-[calc(881px+var(--exty,0px))] left-[-5px] overflow-clip top-[-18.5px] w-[400px] bg-[image:linear-gradient(180deg,rgba(249,166,241,0.29)_187.57px,rgba(40,0,30,0.29)_730px),linear-gradient(90deg,rgba(117,5,88,0.75)_0%,rgba(117,5,88,0.75)_100%)]"
     >
       <Overlay />
       {showWheel && (
@@ -960,6 +934,8 @@ export default function SpinTheWheel({
       <Frame3 />
       <Frame8 />
       <Group8 />
+      {/* Base colour continues below the 844px frame on tall phones (--exty). */}
+      <div className="absolute left-0 top-full w-full h-[var(--exty,0px)] bg-[#d2aece]" />
       <Frame9 phase={phase} showWheel={showWheel} />
     </div>
   );

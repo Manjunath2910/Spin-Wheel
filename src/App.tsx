@@ -43,6 +43,7 @@ export default function App() {
         setViewH(h);
       } else {
         setScale(w <= 640 ? w / FRAME_W : Math.min(w / FRAME_W, h / FRAME_H));
+        setViewH(h);
       }
     };
     update();
@@ -106,12 +107,20 @@ export default function App() {
     );
   }
 
+  // Frame 2's sun-ray watermark is full-bleed: on phones taller than 390:844 the
+  // extra height (in design px) is passed as --exty so the rays reach the bottom.
+  const extY = screen === "spin" ? Math.max(0, Math.floor(viewH / scale) - FRAME_H) : 0;
+
   return (
     <div className={`min-h-screen w-full flex items-start justify-center overflow-x-hidden ${screen === "spin" || screen === "reward" || screen === "email" ? "bg-[#5c1648]" : "bg-[#fff2fe]"}`}>
       {/* Wrapper takes the on-screen (scaled) size so the frame stays centred and
           the app fills the device width on phones. */}
-      <div className="w-[calc(390px*var(--s))] h-[calc(844px*var(--s))]" style={{ "--s": scale } as CSSProperties}>
-        <div className="relative overflow-hidden w-[390px] h-[844px] origin-top-left scale-(--s)">
+      <div
+        className="w-[calc(390px*var(--s))] h-[calc((844px+var(--exty))*var(--s))]"
+        style={{ "--s": scale, "--exty": `${extY}px` } as CSSProperties}
+      >
+        <div className="relative overflow-hidden w-[390px] h-[calc(844px+var(--exty))] origin-top-left scale-(--s)">
+          <div className="relative w-[390px] h-[844px]">
           {screen === "main" && (
             <Onboarding01Option1Default onSpin={() => setScreen("spin")} />
           )}
@@ -136,6 +145,7 @@ export default function App() {
           {(screen === "code" || screen === "qr") && (
             <RewardCode name={userName} onBack={() => setScreen("main")} />
           )}
+          </div>
         </div>
       </div>
     </div>
